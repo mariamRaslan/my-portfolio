@@ -1,0 +1,166 @@
+{
+  "header": {
+    "home": {
+      "title": "Home"
+    },
+    "about": {
+      "title": "About us"
+    },
+    "council": {
+      "title": "Consultation"
+    },
+    "contact": {
+      "title": "Contact us"
+    },
+    "services": {
+      "title": "Services",
+      "popover-header": "Specialization Fields and Services for Homeland Shield Company",
+      "popover-btn": "View All Services",
+      "sublinks": {
+        "service1": "Government Cloud Security Solutions",
+        "service2": "Critical Infrastructure Protection",
+        "service3": "Secure Communications Platforms",
+        "service4": "Digital Forgery Detection Solutions",
+        "service5": "Consulting Services",
+        "service6": "Private Sector Solutions"
+      }
+    }
+  },
+  "stats": {
+    "reports": "Reports",
+    "certificates": "Certificates",
+    "partners": "Partners",
+    "clients": "Clients",
+    "reportsAlt": "Reports icon",
+    "certificatesAlt": "Certificates icon",
+    "partnersAlt": "Partners icon",
+    "clientsAlt": "Clients icon"
+  },
+  "footer": {
+    "headers": {
+      "links": "Important Links",
+      "contact": "Contact Us"
+    },
+    "description": "Providing security consultations and cybersecurity solutions to protect the national digital system in accordance with international standards and the Kingdom of Saudi Arabia's Vision 2030.",
+    "privacy-policy": "Privacy Policy",
+    "terms-and-conditions": "Terms and Conditions",
+    "copyright": {
+      "part1": "All Rights Reserved",
+      "part2": "DirulWatan",
+      "part3": "Designed and Programmed by"
+    }
+  },
+  "contact": {
+    "reach-us": "Or you can reach us through social media",
+    "email": "Our Email",
+    "title": "We're happy to hear from you",
+    "subtitle": "Complete the following information and we will respond to you as soon as possible",
+    "contact-us": " Contact us",
+    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions"
+  },
+  "council": {
+    "title": "Request your consultation now",
+    "subtitle": {
+      "part1": "The",
+      "part2": "DirulWatan",
+      "part3": "team is ready to help you reach a more secure digital environment"
+    },
+    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions",
+    "consultation": "Consultation"
+  },
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter email"
+    },
+    "phone": {
+      "label": "Phone Number",
+      "placeholder": "Enter phone number"
+    },
+    "council_type": {
+      "label": "Consultation Type",
+      "placeholder": "Select consultation type"
+    },
+    "content": {
+      "label": "Message",
+      "placeholder": "Enter message"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Enter message"
+    },
+    "files": {
+      "label": "Files",
+      "placeholder": "Add file from here",
+      "allowed_types": "Allowed file types",
+      "max_size": "Maximum file size"
+    },
+    "send": "Send",
+    "contact-modal": "Thank you for your contacting request",
+    "modal": "Thank you for your consultation request"
+  },
+  "errors": {
+    "name": {
+      "min": "Name must be at least 3 characters.",
+      "max": "Name must be at most 50 characters."
+    },
+    "email": {
+      "required": "Email is required."
+    },
+    "phone": {
+      "invalid": "Phone number must be between 8 and 15 digits, and must not contain the '+' symbol or letters."
+    },
+    "council_type": {
+      "min": "Council type must be at least 1 character."
+    },
+    "content": {
+      "min": "Message must be at least 10 characters."
+    },
+    "message": {
+      "min": "Message must be at least 10 characters."
+    }
+  },
+  "specialization_fields_and_services": "Specialization Fields and Services",
+  "About": {
+    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions",
+    "breadcrumbTitle": "About DirulWatan",
+    "aboutTitle": "About Us",
+    "aboutDescription": "We are a specialized company in security consulting and cybersecurity solutions, offering integrated services to protect your business.",
+    "aboutAlt": "About DirulWatan",
+    "countriesTitle": "Our Global Presence",
+    "usa": "United States of America",
+    "india": "India",
+    "china": "China",
+    "vision": "Vision",
+    "mission": "Mission",
+    "visionText": "We strive to be leaders in delivering trusted cybersecurity solutions.",
+    "missionText": "Our mission is to protect organizations through innovative and effective strategies.",
+    "valuesTitle": "Core Values at",
+    "companyName": "DirulWatan",
+    "noValues": "No core values have been recorded yet."
+  },
+  "Services": {
+    "breadcrumbTitle": "Services",
+    "breadcrumbHeader": "DirulWatan for Security Consulting and Cybersecurity Solutions"
+  },
+  "whyUs": {
+    "brand": "DirulWatan",
+    "title": "Why choose to work with <brand>DirulWatan</brand>?",
+    "subtitle": "The <brand>DirulWatan</brand> team stands out with many qualities that position us as leaders in cybersecurity.",
+    "feature1": "Internationally certified experts in cybersecurity."
+  },
+   "home": {
+    "certificates": {
+      "title": "<brand>DirulWatan</brand> Certificates",
+      "subtitle": "Our certifications affirm our commitment to quality standards"
+    },
+    "partners": {
+      "title": "Partners"
+    }},
+    "solutions_section_title": "<gradient>Specialized</gradient> Solutions in Multiple Sectors",
+    "show_more":"Show more"
+}
