@@ -28,7 +28,7 @@ const buttonVariants = cva(
         "animated-gradient":
           "relative isolate overflow-hidden z-0 text-white bg-[#6e17b4] " +
           "before:content-[''] before:absolute before:inset-0 before:z-0 " +
-          "before:bg-[linear-gradient(120deg,#4622e9,#6e17b4,#4622e9)] " + // moving image
+          "before:bg-[linear-gradient(120deg,#f59e0b,#6e17b4,#f59e0b)] " + // moving image
           "before:[background-size:200%_200%] " + // big canvas to scroll
           "before:animate-[gradient-move_6s_ease-in-out_infinite] " + // animate position
           "before:opacity-90 before:pointer-events-none " +

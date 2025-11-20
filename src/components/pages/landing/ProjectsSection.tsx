@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import StackingCards, {
   StackingCardItem,
 } from "@/components/fancy/blocks/stacking-cards";
+import SectionHeader from "@/components/SectionHeader";
 
 const cards = [
   {
@@ -44,7 +45,14 @@ export default function StackingCardsDemo() {
   const stackHeight = `calc(100vh + ${(total - 1) * 60}vh)`; // tweak 60→40/80 to taste
 
   return (
-    <section className="container text-white">
+    <section className="container py-12 text-white">
+      <SectionHeader
+        align="center"
+        highlight
+        eyebrow="Showcase"
+        title="Projects that ship"
+        description="Real-world builds where performance, accessibility, and motion all work together."
+      />
       {/* This wrapper creates the scroll distance (window scroll only) */}
       <div style={{ height: stackHeight }}>
         <StackingCards totalCards={total} scaleMultiplier={0.08}>

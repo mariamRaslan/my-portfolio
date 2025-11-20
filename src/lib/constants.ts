@@ -45,18 +45,18 @@ export const services = [
   },
 ];
 export const SKILLS = [
-  { name: "Next.js", icon: "/tech/nextjs.svg" },
-  { name: "React", icon: "/tech/react.svg" },
-  { name: "TypeScript", icon: "/tech/typescript.svg" },
-  { name: "Tailwind CSS", icon: "/tech/tailwind.svg" },
-  { name: "shadcn/ui", icon: "/tech/shadcn.svg" },
-  { name: "Framer Motion", icon: "/tech/framer.svg" },
-  { name: "React Query", icon: "/tech/react-query.svg" },
-  { name: "Zustand", icon: "/tech/zustand.png" },
-  { name: "Embla Carousel", icon: "/tech/embla.svg" },
-  { name: "Fabric.js", icon: "/tech/fabricjs.svg" },
-  { name: "Laravel", icon: "/tech/laravel.svg" },
-  { name: "MySQL", icon: "/tech/mysql.svg" },
+  { name: "Next.js", icon: "/images/tech/tech-1.png" },
+  { name: "React", icon: "/images/tech/tech-2.png"  },
+  { name: "TypeScript", icon: "/images/tech/tech-3.png"  },
+  { name: "Tailwind CSS", icon: "/images/tech/tech-4.png"  },
+  { name: "shadcn/ui", icon: "/images/tech/tech-1.png" },
+  { name: "Framer Motion", icon: "/images/tech/tech-2.png"  },
+  { name: "React Query", icon: "/images/tech/tech-3.png"  },
+  { name: "Zustand", icon: "/images/tech/tech-4.png"  },
+  { name: "Embla Carousel", icon:"/images/tech/tech-1.png" },
+  { name: "Fabric.js", icon: "/images/tech/tech-2.png"  },
+  { name: "Laravel", icon: "/images/tech/tech-3.png"  },
+  { name: "MySQL", icon: "/images/tech/tech-4.png"  },
 ];
 
 

@@ -7,6 +7,8 @@ import { navlinks } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import React from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { Button } from "../ui/button";
+import { Download } from "lucide-react";
 
 function Header() {
   const [open, setOpen] = React.useState(false);
@@ -76,7 +78,7 @@ function Header() {
                       {isActive && (
                         <motion.span
                           layoutId="active-pill"
-                          className="bg-primary-800 text-primary-900 absolute inset-0 rounded-[10px] "
+                          className="bg-primary-800/20 text-primary-900 absolute inset-0 rounded-[10px] "
                           transition={{
                             type: "spring",
                             stiffness: 500,
@@ -98,7 +100,7 @@ function Header() {
               </nav>
 
               <div className="flex gap-4 lg:gap-6">
-         
+      
                 <MobileMenu />
               </div>
             </div>

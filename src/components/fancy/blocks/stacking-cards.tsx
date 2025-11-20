@@ -73,7 +73,7 @@ const StackingCardItem = ({
   const scaleTo = 1 - (totalCards - index) * (scaleMultiplier ?? 0.03)
   const rangeScale = [index * (1 / totalCards), 1]
   const scale = useTransform(progress, rangeScale, [1, scaleTo])
-  const top = topPosition ?? `${25 + index * 3}%`
+  const top = topPosition ?? `${18 + index * 3}%`
 
   return (
     <div className={cn("h-full sticky top-0", className)} {...props}>

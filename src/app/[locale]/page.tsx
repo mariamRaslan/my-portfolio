@@ -5,21 +5,20 @@ import Hero from "@/components/pages/landing/Hero";
 import { SKILLS } from "@/lib/constants";
 import SkillsSlider from "@/components/pages/landing/SkillsSlider";
 import ProjectsSection from "@/components/pages/landing/ProjectsSection";
+import ExperienceTimeline from "@/components/pages/landing/ExperienceTimeline";
+import ContactSection from "@/components/pages/landing/ContactSection";
 
 export default async function Home() {
-  const t = await getTranslations("home");
-
   return (
-    <section className="relative min-h-[calc(100vh-80px)]  text-white pt-20 ">
-       {/* <SplashCursor /> */}
+    <section className="relative min-h-[calc(100vh-80px)] pt-20 text-white">
+      {/* <SplashCursor /> */}
       <Hero />
-       <SkillsSlider skills={SKILLS} />
-       <ProjectsSection />
-     
-      {/* the interactive background */}
- 
-        {/* <h1 className="text-center text-3xl text-white">Hello, Starter kit</h1> */}
- 
+      <ProjectsSection />
+      <section className="relative isolate overflow-hidden bg-neutral-950 py-30">
+        <ExperienceTimeline />
+      </section>
+      <SkillsSlider skills={SKILLS} />
+      <ContactSection />
     </section>
   );
 }
