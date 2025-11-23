@@ -7,6 +7,7 @@ import StackingCards, {
   StackingCardItem,
 } from "@/components/fancy/blocks/stacking-cards";
 import SectionHeader from "@/components/SectionHeader";
+import SplashCursor from "@/components/SplashCursor";
 
 const cards = [
   {
@@ -45,23 +46,26 @@ export default function StackingCardsDemo() {
   const stackHeight = `calc(100vh + ${(total - 1) * 60}vh)`; // tweak 60→40/80 to taste
 
   return (
-    <section className="container py-12 text-white">
+    <section className="container py-12 text-white ">
+         {/* <div className="pointer-events-none absolute inset-0 z-1">
+          <SplashCursor />
+        </div> */}
       <SectionHeader
         align="center"
         highlight
         eyebrow="Showcase"
         title="Projects that ship"
         description="Real-world builds where performance, accessibility, and motion all work together."
-      />
+      /> 
       {/* This wrapper creates the scroll distance (window scroll only) */}
       <div style={{ height: stackHeight }}>
         <StackingCards totalCards={total} scaleMultiplier={0.08}>
           {cards.map(({ bgColor, description, image, title }, index) => (
             // key part: sticky + full viewport height
-            <StackingCardItem key={index} index={index} className="h-[620px]">
+            <StackingCardItem key={index} index={index} className="h-[620px] z-[50]">
               <div
                 className={cn(
-                  "relative isolate mx-auto flex h-full w-11/12 flex-col rounded-3xl bg-[#141414] px-8 py-10 sm:flex-row",
+                  "relative isolate mx-auto flex h-full w-11/12 flex-col rounded-3xl bg-white/3  backdrop-blur-xl px-8 py-10 sm:flex-row",
                 )}
               >
                 {/* Right-half background light */}

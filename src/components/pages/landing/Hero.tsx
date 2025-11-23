@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import SplashCursor from "@/components/SplashCursor";
 
 /**
  * Drop-in animated hero for a portfolio
@@ -40,18 +41,21 @@ export default function HeroSection() {
 
   return (
     <>
+      {/* <div className="pointer-events-none absolute inset-0 z-1">
+        <SplashCursor />
+      </div> */}
       <div className="mx-auto flex w-full flex-col gap-5 pt-10 text-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-3xl font-extrabold tracking-tight text-balance text-white md:text-5xl"
+          className="z-[50] text-3xl font-extrabold tracking-tight text-balance text-white md:text-5xl"
         >
           Mariam Raslan
         </motion.h1>
         {/* Rotating title */}
-        <div className="mt-2 h-8 w-full text-lg font-medium text-white/70 md:mt-3 md:h-9">
+        <div className="z-[50] mt-2 h-8 w-full text-lg font-medium text-white/70 md:mt-3 md:h-9">
           <AnimatePresence mode="wait">
             <motion.span
               key={title}
@@ -65,7 +69,7 @@ export default function HeroSection() {
             </motion.span>
           </AnimatePresence>
         </div>
-        <Button variant={"animated-gradient"} className="mx-auto w-fit">
+        <Button variant={"animated-gradient"} className="z-[50] mx-auto w-fit">
           <div className="flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm">
             <Download className="size-4" /> <span>Download CV</span>
           </div>
@@ -82,11 +86,11 @@ export default function HeroSection() {
           className="pointer-events-none absolute inset-0 z-0 [background-image:radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px] [background-position:0_0] opacity-[0.15]"
         />
 
-        <div className="relative z-10 container">
+        <div className="relative z-[50] container">
           {/* CONTENT CARD with halo */}
           <div className="mx-auto w-fit rounded-3xl">
             <div className="rounded-3xl p-[1px] shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_80px_24px_rgba(70,34,233,0.12)]">
-              <div className="max-w-[1050px] rounded-3xl border border-white/10 bg-white/5 px-6 py-10 backdrop-blur-md md:px-12 md:py-14">
+              <div className="max-w-[1050px] rounded-3xl border border-white/10 bg-white/5 px-6 py-10 backdrop-blur-xl md:px-12 md:py-14">
                 {/* availability badge */}
                 <div className="mb-6 flex items-center gap-2">
                   <span className="inline-flex h-2 w-2 animate-pulse rounded-full bg-emerald-400" />

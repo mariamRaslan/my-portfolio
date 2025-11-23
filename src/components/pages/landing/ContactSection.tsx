@@ -3,6 +3,7 @@
 import * as React from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import FrostPlate from "@/components/FrostPlate";
 
 const Schema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -16,6 +17,7 @@ export default function ContactSection() {
   const [ok, setOk] = React.useState<null | boolean>(null);
   const [errors, setErrors] = React.useState<Record<string, string>>({});
   const formRef = React.useRef<HTMLFormElement | null>(null);
+  const cardRef = React.useRef<HTMLDivElement>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,7 +36,9 @@ export default function ContactSection() {
     const parsed = Schema.safeParse(payload);
     if (!parsed.success) {
       const map: Record<string, string> = {};
-      parsed.error.issues.forEach((i) => (map[i.path[0] as string] = i.message));
+      parsed.error.issues.forEach(
+        (i) => (map[i.path[0] as string] = i.message),
+      );
       setErrors(map);
       return;
     }
@@ -68,84 +72,93 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative isolate overflow-hidden bg-neutral-950 py-20"
+      className="py-20"
       style={{ ["--brand" as any]: "#9780ff" }}
     >
-      <div className="container  px-4">
-        <header className="mb-8 text-center">
-          <p className="mx-auto inline-flex rounded-[var(--radius)] bg-[var(--brand)]/12 px-3 py-1 text-xs font-semibold text-[var(--brand)] ring-1 ring-[var(--brand)]/30">
-            Get in touch
-          </p>
-          <h2 className="mt-3 text-balance text-3xl font-semibold text-white md:text-5xl">
-            Let’s build something
-          </h2>
-          <p className="mx-auto mt-3 max-w-prose text-white/70">
-            Tell me a bit about your project and how I can help.
-          </p>
-        </header>
-
-        <form
-          ref={formRef}
-          onSubmit={onSubmit}
-          className="mx-auto grid max-w-3xl gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur supports-[backdrop-filter]:bg-white/5 md:p-8"
-        >
-          {/* honeypot (hidden) */}
-          <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" />
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Field
-              label="Your name"
-              name="name"
-              autoComplete="name"
-              placeholder="Jane Doe"
-              error={errors.name}
-            />
-            <Field
-              label="Email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              placeholder="jane@example.com"
-              error={errors.email}
-            />
-          </div>
-
-          <Field
-            label="Message"
-            name="message"
-            as="textarea"
-            rows={6}
-            placeholder="What are you building?"
-            error={errors.message}
-          />
-
-          <div className="mt-2 flex items-center justify-between gap-3">
-            <small className="text-white/60">
-              I’ll reply within 24–48h. Your info stays private.
-            </small>
-
-            <Button
-              variant="animated-gradient"
-              className="min-w-36"
-              type="submit"
-              disabled={loading}
-            >
-              {loading ? "Sending..." : "Send message"}
-            </Button>
-          </div>
-
-          {/* status */}
-          {ok === true && (
-            <p role="status" className="text-emerald-400">
-              Thanks! Your message is on its way.
+      {/* Wrapper that defines the plate area */}
+      <div ref={cardRef} className="relative mx-auto max-w-3xl">
+        {/* The frosted plate is rendered globally, aligned to this rect */}
+        <FrostPlate target={cardRef} radius={16} blur={20} />
+        <div className="container px-4">
+          <header className="relative z-10 mb-8 text-center">
+            <p className="mx-auto inline-flex rounded-[var(--radius)] bg-[var(--brand)]/12 px-3 py-1 text-xs font-semibold text-[var(--brand)] ring-1 ring-[var(--brand)]/30">
+              Get in touch
             </p>
-          )}
-          {ok === false && (
-            <p role="status" className="text-rose-400">
-              Sorry—something went wrong. Please try again.
+            <h2 className="mt-3 text-3xl font-semibold text-balance text-white md:text-5xl">
+              Let’s build something
+            </h2>
+            <p className="mx-auto mt-3 max-w-prose text-white/70">
+              Tell me a bit about your project and how I can help.
             </p>
-          )}
-        </form>
+          </header>
+
+          <div className="relative z-10 mx-auto grid max-w-3xl gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl md:p-8">
+            <form ref={formRef} onSubmit={onSubmit}>
+              {/* honeypot (hidden) */}
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field
+                  label="Your name"
+                  name="name"
+                  autoComplete="name"
+                  placeholder="Jane Doe"
+                  error={errors.name}
+                />
+                <Field
+                  label="Email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="jane@example.com"
+                  error={errors.email}
+                />
+              </div>
+
+              <Field
+                label="Message"
+                name="message"
+                as="textarea"
+                rows={6}
+                placeholder="What are you building?"
+                error={errors.message}
+              />
+
+              <div className="mt-2 flex items-center justify-between gap-3">
+                <small className="text-white/60">
+                  I’ll reply within 24–48h. Your info stays private.
+                </small>
+
+                <Button
+                  variant="animated-gradient"
+                  className="min-w-36"
+                  type="submit"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Send message"}
+                </Button>
+              </div>
+
+              {/* status */}
+              {ok === true && (
+                <p role="status" className="text-emerald-400">
+                  Thanks! Your message is on its way.
+                </p>
+              )}
+              {ok === false && (
+                <p role="status" className="text-rose-400">
+                  Sorry—something went wrong. Please try again.
+                </p>
+              )}
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -158,7 +171,7 @@ function Field(
     error?: string;
     as?: "input" | "textarea";
   } & React.InputHTMLAttributes<HTMLInputElement> &
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
 ) {
   const { label, name, error, as = "input", ...rest } = props;
   const Comp: any = as;
@@ -169,7 +182,7 @@ function Field(
         name={name}
         className={[
           "w-full rounded-[var(--radius)] border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/40",
-          "focus:outline-none focus:ring-2 focus:ring-[#9780ff] focus:ring-offset-0",
+          "focus:ring-2 focus:ring-[#9780ff] focus:ring-offset-0 focus:outline-none",
         ].join(" ")}
         aria-invalid={!!error}
         {...rest}

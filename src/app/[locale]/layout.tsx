@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import { getPublicData } from "@/config/client-fetch";
 import { IHomeServices } from "@/types/home.type";
 import NextTopLoader from "nextjs-toploader";
+import SplashCursor from "@/components/SplashCursor";
 
 const readexPro = Readex_Pro({
   weight: ["400", "500", "600", "700"],
@@ -37,17 +38,19 @@ export const generateMetadata = async ({
 export default async function RootLayout({ children, params }: Props) {
   const locale = (await params).locale;
 
-
   return (
-    <html
-      lang={locale}
-      dir={locale === "ar" ? "rtl" : "ltr"}
-      className="scroll-smooth"
-    >
-      <body  className={`${readexPro.className} ${readexPro.variable} bg-neutral-950`} suppressHydrationWarning={true}>
+    <html dir={"ltr"} className="scroll-smooth">
+      <body
+        className={`${readexPro.className} ${readexPro.variable}  bg-neutral-950`}
+        suppressHydrationWarning={true}
+      >
         <NextIntlClientProvider>
-          <Header  />
-          <main className="flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
+          <Header />
+
+          <main className="z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950 relative">
+            <div className="pointer-events-none fixed inset-0 z-1">
+              {/* <SplashCursor /> */}
+            </div>
             {children}
           </main>
           {/* <Footer /> */}

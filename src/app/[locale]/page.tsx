@@ -11,12 +11,9 @@ import ContactSection from "@/components/pages/landing/ContactSection";
 export default async function Home() {
   return (
     <section className="relative min-h-[calc(100vh-80px)] pt-20 text-white">
-      {/* <SplashCursor /> */}
       <Hero />
       <ProjectsSection />
-      <section className="relative isolate overflow-hidden bg-neutral-950 py-30">
-        <ExperienceTimeline />
-      </section>
+      <ExperienceTimeline />
       <SkillsSlider skills={SKILLS} />
       <ContactSection />
     </section>

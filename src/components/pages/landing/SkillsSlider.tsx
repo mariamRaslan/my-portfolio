@@ -6,6 +6,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { cn } from "@/lib/utils";
 import SectionHeader from "@/components/SectionHeader";
+import FrostPlate from "@/components/FrostPlate"; // 👈 add this
 
 type Skill = { name: string; icon?: string };
 
@@ -50,19 +51,32 @@ export default function SkillsSlider({
     return [...base, ...base, ...base]; // triple for smoother looping
   }, [skills]);
 
-  return (
-    <section className={cn("py-20 pt-8", className)}>
-      <div className="container">
-        {title && <SectionHeader align="center" highlight title={title} 
-         description=
-        "Frontend architecture, component libraries, performance profiling, and smooth interactions — all wired to real-world delivery." />}
+  // 👇 this wraps ONLY the viewport area we want frosted
+  const glassAreaRef = React.useRef<HTMLDivElement>(null);
 
-        <div className="relative mt-12">
-          {/* edge fades (no masks, fully compatible) */}
+  return (
+    <section className={cn("py-20", className)}>
+      <div className="container">
+        {title && (
+          <SectionHeader
+            align="center"
+            highlight
+            title={title}
+            description="Frontend architecture, component libraries, performance profiling, and smooth interactions — all wired to real-world delivery."
+          />
+        )}
+
+        {/* ===== Frosted viewport wrapper ===== */}
+        <div ref={glassAreaRef} className="relative mt-12">
+          {/* Frosted plate aligned to this area (portal, super light) */}
+          <FrostPlate target={glassAreaRef} radius={16} blur={18} />
+
+          {/* edge fades (drawn above the plate) */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-neutral-950 to-transparent md:w-24" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-neutral-950 to-transparent md:w-24" />
 
-          <div className="embla overflow-hidden" ref={emblaRef}>
+          {/* Embla viewport */}
+          <div className="embla relative overflow-hidden " ref={emblaRef}>
             <div className="embla__container flex">
               {items.map((s, i) => (
                 <div
@@ -75,6 +89,7 @@ export default function SkillsSlider({
             </div>
           </div>
         </div>
+        {/* ==================================== */}
       </div>
     </section>
   );
@@ -84,10 +99,10 @@ function SkillPill({ name, icon }: Skill) {
   return (
     <div
       className={cn(
-        "group relative inline-flex items-center gap-2 rounded-2xl",
-        "border border-white/10 bg-white/5 px-8 py-4 text-sm text-white/90",
-        "backdrop-blur-md",
-        // outer halo on hover
+        "group relative inline-flex items-center gap-2 rounded-2xl z-10",
+        "border border-white/10 px-8 py-4 text-sm text-white/90",
+        // no per-pill backdrop blur (the FrostPlate handles it)
+        "bg-white/5",
         "transition-shadow duration-300",
         "hover:shadow-[0_0_40px_10px_rgba(151,128,255,0.18)]",
       )}

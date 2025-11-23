@@ -81,7 +81,7 @@ export default function SectionHeader({
       : "text-4xl sm:text-6xl"; // lg
 
   return (
-    <div ref={rootRef} id={id} className={cn("relative", className)}>
+    <div ref={rootRef} id={id} className={cn("relative z-[50]", className)}>
       <header className={cn("flex flex-col gap-4", alignWrap)}>
         {eyebrow && (
           <div className="inline-flex items-center gap-2">

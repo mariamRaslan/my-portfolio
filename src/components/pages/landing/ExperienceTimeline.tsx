@@ -1,6 +1,7 @@
 "use client";
 
 import SectionHeader from "@/components/SectionHeader";
+import SplashCursor from "@/components/SplashCursor";
 import * as React from "react";
 import Tilt from "react-parallax-tilt";
 
@@ -43,11 +44,11 @@ function TimelineCard({ item, active }: { item: Item; active: boolean }) {
     >
       <article
         className={[
-          "relative rounded-2xl border border-white/10 bg-neutral-900/50 p-6 text-white shadow-[0_10px_30px_rgba(0,0,0,.35)] backdrop-blur supports-[backdrop-filter]:bg-neutral-900/40",
-          "transition-all duration-500",
+          "relative rounded-2xl border border-white/10 bg-white/5 p-6 text-white shadow-[0_10px_30px_rgba(0,0,0,.35)] backdrop-blur-xl",
+          "duration-500",
           active
-            ? "z-10 translate-y-0 scale-[1.02] opacity-100 shadow-[0_16px_44px_rgba(151,128,255,.25)]"
-            : "translate-y-2 scale-[0.96] opacity-70",
+            ? "opacity-100 shadow-[0_16px_44px_rgba(151,128,255,.25)]"
+            : "opacity-70",
         ].join(" ")}
       >
         <div className="mb-4 inline-flex items-center gap-2">
@@ -137,13 +138,15 @@ export default function ExperienceTimeline() {
   const done = pct >= 99.5; // tweak threshold if needed
   return (
     <>
-      <section className="relative overflow-hidden py-24">
+      <section className="relative overflow-hidden py-20">
+ 
         <SectionHeader
           align="center"
           highlight
           eyebrow="Journey"
           title="Experience that scales"
-          description="A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery."
+          description="A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery." 
+          className="z-[50]"
         />
       </section>
       <section
@@ -169,7 +172,7 @@ export default function ExperienceTimeline() {
         </div>
 
         {/* rows */}
-        <div className="relative grid gap-y-20 lg:grid-cols-[minmax(0,1fr)_var(--mid)_minmax(0,1fr)]">
+        <div className="relative z-[99999999999999] grid gap-y-20 lg:grid-cols-[minmax(0,1fr)_var(--mid)_minmax(0,1fr)]">
           {items.map((item, i) => {
             const left = i % 2 === 0;
             const isActive = i === activeIndex;
@@ -179,7 +182,7 @@ export default function ExperienceTimeline() {
                 {/* LEFT column */}
                 {left ? (
                   <div
-                    ref={(el:any) => (nodeRefs.current[i] = el)}
+                    ref={(el: any) => (nodeRefs.current[i] = el)}
                     data-index={i} // <-- needed for IntersectionObserver
                   >
                     <TimelineCard item={item} active={isActive} />
@@ -192,7 +195,7 @@ export default function ExperienceTimeline() {
                 <div className="relative flex items-center justify-center">
                   <span
                     className={[
-                      "relative z-10 block size-3 rounded-full border border-white/20",
+                      "relative block size-3 rounded-full border border-white/20",
                       isActive ? "bg-[var(--brand)]" : "bg-white/10",
                     ].join(" ")}
                     style={{
@@ -216,7 +219,7 @@ export default function ExperienceTimeline() {
                   <div className="hidden lg:block" />
                 ) : (
                   <div
-                    ref={(el:any) => (nodeRefs.current[i] = el)}
+                    ref={(el: any) => (nodeRefs.current[i] = el)}
                     data-index={i} // <-- needed for IntersectionObserver
                   >
                     <TimelineCard item={item} active={isActive} />
