@@ -1,14 +1,28 @@
+// app/(site)/_sections/ContactSection.tsx (or wherever you keep it)
 "use client";
 
 import * as React from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import FrostPlate from "@/components/FrostPlate";
+import { Mail, Phone } from "lucide-react";
+
+const CONTACT_EMAIL =
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@example.com";
+const CONTACT_PHONE =
+  process.env.NEXT_PUBLIC_CONTACT_PHONE || "+20 10 0000 0000";
 
 const Schema = z.object({
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Enter a valid email"),
+  phone: z
+    .string()
+    .trim()
+    .optional()
+    .refine((v) => !v || /^[\d+\-()\s]{7,20}$/.test(v), "Enter a valid phone"),
   message: z.string().min(10, "A bit more detail helps"),
+  company: z.string().optional(), // honeypot
+  startedAt: z.number().optional(),
 });
 
 export default function ContactSection() {
@@ -28,6 +42,7 @@ export default function ContactSection() {
     const payload = {
       name: String(fd.get("name") || ""),
       email: String(fd.get("email") || ""),
+      phone: String(fd.get("phone") || ""),
       message: String(fd.get("message") || ""),
       company: String(fd.get("company") || ""), // honeypot
       startedAt,
@@ -52,16 +67,8 @@ export default function ContactSection() {
       });
       const data = await res.json();
       setOk(Boolean(data.ok) && res.ok);
-      if (res.ok) {
-        formRef.current?.reset();
-      } else if (data.errors) {
-        // zod server-side errors (rare because we validate client-side)
-        const map: Record<string, string> = {};
-        Object.entries<any>(data.errors.fieldErrors || {}).forEach(([k, v]) => {
-          map[k] = Array.isArray(v) ? v[0] : String(v);
-        });
-        setErrors(map);
-      }
+      if (res.ok) formRef.current?.reset();
+      else if (data.errors) setErrors(data.errors);
     } catch {
       setOk(false);
     } finally {
@@ -75,10 +82,9 @@ export default function ContactSection() {
       className="py-20"
       style={{ ["--brand" as any]: "#9780ff" }}
     >
-      {/* Wrapper that defines the plate area */}
-      <div ref={cardRef} className="relative mx-auto max-w-3xl">
-        {/* The frosted plate is rendered globally, aligned to this rect */}
+      <div ref={cardRef} className="relative mx-auto max-w-5xl">
         <FrostPlate target={cardRef} radius={16} blur={20} />
+
         <div className="container px-4">
           <header className="relative z-10 mb-8 text-center">
             <p className="mx-auto inline-flex rounded-[var(--radius)] bg-[var(--brand)]/12 px-3 py-1 text-xs font-semibold text-[var(--brand)] ring-1 ring-[var(--brand)]/30">
@@ -92,9 +98,41 @@ export default function ContactSection() {
             </p>
           </header>
 
-          <div className="relative z-10 mx-auto grid max-w-3xl gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl md:p-8">
-            <form ref={formRef} onSubmit={onSubmit}>
-              {/* honeypot (hidden) */}
+          <div className="relative z-10 mx-auto flex flex-col items-center gap-10 rounded-2xl border border-white/10 bg-white/5 px-6 py-8 backdrop-blur-xl max-w-3xl">
+            <div className="w-full grid grid-cols-2 gap-4 px-8">
+              {" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/90 transition hover:bg-white/10"
+              >
+                <Mail size={16} /> {CONTACT_EMAIL}
+              </a>
+              <a
+                href={`tel:${CONTACT_PHONE.replace(/\s+/g, "")}`}
+                className="flex items-center gap-3 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/90 transition hover:bg-white/10"
+              >
+                <Phone size={16} /> {CONTACT_PHONE}
+              </a>
+            </div>
+            {/* Divider + label */}
+            <div className="w-full px-8">
+              <div className="flex items-center   gap-3">
+                  <span aria-hidden className="h-px flex-1 bg-white/15" />
+
+                <p className="shrink-0 text-xs whitespace-nowrap text-white/60">
+                  Or use the form
+                </p>
+                    <span aria-hidden className="h-px flex-1 bg-white/15" />
+
+              </div>
+            </div>
+
+            {/* Form */}
+            <form
+              ref={formRef}
+              onSubmit={onSubmit}
+              className="grid w-full gap-4 px-8"
+            >
               <input
                 type="text"
                 name="company"
@@ -122,6 +160,15 @@ export default function ContactSection() {
               </div>
 
               <Field
+                label="Phone (optional)"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder="+20 10 1234 5678"
+                error={errors.phone}
+              />
+
+              <Field
                 label="Message"
                 name="message"
                 as="textarea"
@@ -130,11 +177,10 @@ export default function ContactSection() {
                 error={errors.message}
               />
 
-              <div className="mt-2 flex items-center justify-between gap-3">
+              <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <small className="text-white/60">
                   I’ll reply within 24–48h. Your info stays private.
                 </small>
-
                 <Button
                   variant="animated-gradient"
                   className="min-w-36"
@@ -145,7 +191,6 @@ export default function ContactSection() {
                 </Button>
               </div>
 
-              {/* status */}
               {ok === true && (
                 <p role="status" className="text-emerald-400">
                   Thanks! Your message is on its way.
