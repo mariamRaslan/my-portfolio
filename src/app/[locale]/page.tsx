@@ -11,6 +11,7 @@ import ContactSection from "@/components/pages/landing/ContactSection";
 export default async function Home() {
   return (
     <section className="relative min-h-[calc(100vh-80px)] pt-20 text-white">
+      
       <Hero  />
       <ProjectsSection />
       <ExperienceTimeline />

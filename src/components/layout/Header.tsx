@@ -35,7 +35,7 @@ function Header() {
       {/* scroll progress */}
       <motion.div
         aria-hidden
-        className="from-primary-800 fixed top-0 right-0 left-0 z-[99999999999] h-[3px] origin-left bg-gradient-to-r via-fuchsia-500 to-amber-400"
+        className="from-primary-800 fixed top-0 right-0 left-0 z-[999] h-[3px] origin-left bg-gradient-to-r via-fuchsia-500 to-amber-400"
         style={{ scaleX }}
       />
 

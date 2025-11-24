@@ -8,6 +8,8 @@ import { getPublicData } from "@/config/client-fetch";
 import { IHomeServices } from "@/types/home.type";
 import NextTopLoader from "nextjs-toploader";
 import SplashCursor from "@/components/SplashCursor";
+import SplitCurtainLoader from "@/components/SplitCurtainLoader";
+import { Suspense, useContext, useEffect, useState } from "react";
 
 const readexPro = Readex_Pro({
   weight: ["400", "500", "600", "700"],
@@ -41,21 +43,31 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html dir={"ltr"} className="scroll-smooth">
       <body
-        className={`${readexPro.className} ${readexPro.variable}  bg-neutral-950`}
+        className={`${readexPro.className} ${readexPro.variable} bg-neutral-950`}
         suppressHydrationWarning={true}
       >
         <NextIntlClientProvider>
           <Header />
 
-          <main className="z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950 relative">
+          <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
             <div className="pointer-events-none fixed inset-0 z-1">
               {/* <SplashCursor /> */}
             </div>
+
             {children}
           </main>
           {/* <Footer /> */}
           <NextTopLoader color="#00B9AD" />
         </NextIntlClientProvider>
+        <SplitCurtainLoader
+          logoSrc="/images/white-logo.png"
+  
+          bgGradient="linear-gradient(90deg, #6e17b4 0.01%, #f59e0b 100%)"
+          fg="#ffffff"
+           durationMs={1600}        // how long it waits BEFORE splitting
+           splitDurationMs={3000}   // how long the split movement takes
+          onlyOnce={false}
+        />
       </body>
     </html>
   );
