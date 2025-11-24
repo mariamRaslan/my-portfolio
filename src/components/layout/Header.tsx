@@ -58,7 +58,7 @@ function Header() {
             <div
               className={cn(
                 "flex h-16 w-fit items-center gap-6 rounded-2xl px-3 shadow-sm md:h-20 lg:h-[62px]",
-                " bg-white/5 backdrop-blur-[8px]",
+                "bg-white/5 backdrop-blur-[8px]",
                 // ✨ outer halo (two layers)
                 "shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_80px_24px_rgba(70,34,233,0.12)]",
               )}
@@ -78,7 +78,7 @@ function Header() {
                       {isActive && (
                         <motion.span
                           layoutId="active-pill"
-                          className="bg-primary-800/20 text-primary-900 absolute inset-0 rounded-[10px] "
+                          className="bg-primary-800/20 text-primary-900 absolute inset-0 rounded-[10px]"
                           transition={{
                             type: "spring",
                             stiffness: 500,
@@ -91,16 +91,15 @@ function Header() {
                     </Link>
                   );
                 })}
-                               <Link
+                <Link
                   href="#contact"
-                  className="rounded-xl   px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
+                  className="rounded-xl px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
                 >
                   Contact me
                 </Link>
               </nav>
 
               <div className="flex gap-4 lg:gap-6">
-      
                 <MobileMenu />
               </div>
             </div>

@@ -46,10 +46,8 @@ export default function StackingCardsDemo() {
   const stackHeight = `calc(100vh + ${(total - 1) * 60}vh)`; // tweak 60→40/80 to taste
 
   return (
-    <section className="container py-12 text-white ">
-         {/* <div className="pointer-events-none absolute inset-0 z-1">
-          <SplashCursor />
-        </div> */}
+    <section className="container py-12 text-white " id="projects">
+
       <SectionHeader
         align="center"
         highlight

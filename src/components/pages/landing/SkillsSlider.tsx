@@ -55,7 +55,7 @@ export default function SkillsSlider({
   const glassAreaRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <section className={cn("py-20", className)}>
+    <section className={cn("py-20", className)} id="skills">
       <div className="container">
         {title && (
           <SectionHeader

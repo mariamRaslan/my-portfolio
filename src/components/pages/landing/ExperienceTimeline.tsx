@@ -14,22 +14,38 @@ type Item = {
 
 const items: Item[] = [
   {
-    date: "Oct 2021",
-    title: "Started AI & Computing Journey",
-    org: "Faculty of Computers and Data Science – Alexandria University",
-    desc: "Began my bachelor’s degree; focused on fundamentals and computational thinking.",
+    date: "Jan 2025 - present",
+    org: "Pixbyte",
+    title: "Frontend Developer",
+    desc:
+      "• Owning the web frontend in Next.js 15 (App Router, RSC) with TypeScript & Tailwind.\n" +
+      "• Built a reusable UI kit (Radix + shadcn) and SSR/ISR + React Query data layer.\n" ,
+
   },
   {
-    date: "Oct 2022",
-    title: "Egyptian Space Agency Training",
-    org: "Egyptian Space Agency",
-    desc: "Satellite systems training; data analysis and space tech apps.",
+    date: "Jul 2023 - Jan 2025",
+    org: "Mobileaders",
+    title: "Frontend Developer",
+    desc:
+      "• Optimized Core Web Vitals with code-splitting, image optimization, and caching.\n" +
+      "• Shipped accessible, RTL-ready UIs, form flows (React Hook Form + Zod), and E2E tests (Playwright).\n"+
+      "• Built dashboards, role/permission-based admin, and i18n with full RTL support.\n" ,
   },
   {
-    date: "Oct 2023",
-    title: "Another Milestone",
-    org: "Cool Place",
-    desc: "Did impressive things with data & AI.",
+    date: "Oct 2022 - Jun 2023",
+    org: "Information Technology Institute (ITI)",
+    title: "9-Month Trainee — Open Source Application Development",
+    desc:
+      "• Intensive track covering modern JS, web frameworks, APIs, databases, and DevOps basics.\n" +
+      "• Built a capstone SPA with authentication, CRUD, and testing workflows.",
+  },
+  {
+    date: "2017 - 2021",
+    org: "Faculty of Computer and Information Science",
+    title: "BSc — Information Technology",
+    desc:
+      "• Core CS foundations: algorithms, data structures, OOP, databases, networks.\n" +
+      "• Graduated with projects focused on web applications and UX.",
   },
 ];
 
@@ -56,9 +72,9 @@ function TimelineCard({ item, active }: { item: Item; active: boolean }) {
             {item.date}
           </span>
         </div>
-        <h3 className="text-xl leading-tight font-semibold">{item.title}</h3>
-        <p className="mt-1 text-[#9780ff]">{item.org}</p>
-        <p className="mt-3 text-white/70">{item.desc}</p>
+        <h3 className="text-xl leading-tight font-semibold">{item.org}</h3>
+        <p className="mt-1 text-[#9780ff]">{item.title} </p>
+        <p className="mt-3 text-white/70 whitespace-pre-line">{item.desc}</p>
         <span className="absolute top-4 right-4 block size-2 rounded-full bg-[#9780ff]" />
       </article>
     </Tilt>
@@ -137,7 +153,7 @@ export default function ExperienceTimeline() {
   const pct = Math.max(0, Math.min(100, progress * 100));
   const done = pct >= 99.5; // tweak threshold if needed
   return (
-    <>
+    <div id="experience">
       <section className="relative overflow-hidden py-20">
  
         <SectionHeader
@@ -230,6 +246,6 @@ export default function ExperienceTimeline() {
           })}
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -40,10 +40,7 @@ export default function HeroSection() {
   };
 
   return (
-    <>
-      {/* <div className="pointer-events-none absolute inset-0 z-1">
-        <SplashCursor />
-      </div> */}
+    <div id="hero">
       <div className="mx-auto flex w-full flex-col gap-5 pt-10 text-center">
         {/* Heading */}
         <motion.h1
@@ -75,7 +72,7 @@ export default function HeroSection() {
           </div>
         </Button>
       </div>
-      <section
+      <section 
         onMouseMove={onMove}
         className="relative overflow-hidden bg-neutral-950 py-20 md:pt-30"
       >
@@ -177,7 +174,7 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

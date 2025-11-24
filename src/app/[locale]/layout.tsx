@@ -29,8 +29,8 @@ export const generateMetadata = async ({
 
   return {
     title: {
-      template: `%s | ${isRTL ? "starter-kit" : "starter-kit"}`,
-      default: isRTL ? "starter-kit" : "starter-kit",
+      template: `%s | ${isRTL ? "Mariam Raslan" : "Mariam Raslan"}`,
+      default: isRTL ? "Mariam Raslan" : "Mariam Raslan",
     },
   };
 };

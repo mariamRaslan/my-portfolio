@@ -45,34 +45,30 @@ export const services = [
   },
 ];
 export const SKILLS = [
-  { name: "Next.js", icon: "/images/tech/tech-1.png" },
-  { name: "React", icon: "/images/tech/tech-2.png"  },
-  { name: "TypeScript", icon: "/images/tech/tech-3.png"  },
-  { name: "Tailwind CSS", icon: "/images/tech/tech-4.png"  },
-  { name: "shadcn/ui", icon: "/images/tech/tech-1.png" },
-  { name: "Framer Motion", icon: "/images/tech/tech-2.png"  },
-  { name: "React Query", icon: "/images/tech/tech-3.png"  },
-  { name: "Zustand", icon: "/images/tech/tech-4.png"  },
-  { name: "Embla Carousel", icon:"/images/tech/tech-1.png" },
-  { name: "Fabric.js", icon: "/images/tech/tech-2.png"  },
-  { name: "Laravel", icon: "/images/tech/tech-3.png"  },
-  { name: "MySQL", icon: "/images/tech/tech-4.png"  },
+  { name: "Next.js", icon: "/images/tech/nextjs.png" },
+  { name: "React", icon: "/images/tech/react.png" },
+  { name: "HTML", icon: "/images/tech/html.png" },
+  { name: "Tailwind CSS", icon: "/images/tech/tailwind.png" },
+  { name: "Framer Motion", icon: "/images/tech/framer.png" },
+  { name: "Java Script", icon: "/images/tech/js.png" },
+  { name: "Angular", icon: "/images/tech/angular.png" },
+  { name: "Bootstrap", icon: "/images/tech/bootstrap.png" },
+  { name: "CSS", icon: "/images/tech/css.png" },
+  { name: "Git", icon: "/images/tech/git.png" },
+  { name: "JQuery", icon: "/images/tech/jquery.png" },
 ];
-
 
 export const navlinks = [
   {
     title: "Home",
     href: "/",
   },
-    {
-    title: " Experience ",
-    href: "/experience",
-  },
-
-
   {
     title: "Projects",
-    href: "/council",
+    href: "#projects",
+  },
+  {
+    title: "Experience ",
+    href: "#experience",
   },
 ];
