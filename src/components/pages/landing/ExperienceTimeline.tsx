@@ -19,25 +19,21 @@ const items: Item[] = [
     title: "Frontend Developer",
     desc:
       "• Owning the web frontend in Next.js 15 (App Router, RSC) with TypeScript & Tailwind.\n" +
-      "• Built a reusable UI kit (Radix + shadcn) and SSR/ISR + React Query data layer.\n" ,
-
+      "• Built a reusable UI kit (Radix + shadcn) and SSR/ISR + React Query data layer.\n",
   },
   {
     date: "Jul 2023 - Jan 2025",
     org: "Mobileaders",
     title: "Frontend Developer",
     desc:
-      "• Optimized Core Web Vitals with code-splitting, image optimization, and caching.\n" +
-      "• Shipped accessible, RTL-ready UIs, form flows (React Hook Form + Zod), and E2E tests (Playwright).\n"+
-      "• Built dashboards, role/permission-based admin, and i18n with full RTL support.\n" ,
+      "• Shipped accessible, RTL-ready UIs and form flows (React Hook Form + Zod).\n" +
+      "• Built dashboards, role/permission-based admin, and i18n with full RTL support.\n",
   },
   {
     date: "Oct 2022 - Jun 2023",
     org: "Information Technology Institute (ITI)",
-    title: "9-Month Trainee — Open Source Application Development",
-    desc:
-      "• Intensive track covering modern JS, web frameworks, APIs, databases, and DevOps basics.\n" +
-      "• Built a capstone SPA with authentication, CRUD, and testing workflows.",
+    title: "9 month trainee",
+    desc: "9 Month professional Diploma, open source aplication development track.",
   },
   {
     date: "2017 - 2021",
@@ -45,7 +41,7 @@ const items: Item[] = [
     title: "BSc — Information Technology",
     desc:
       "• Core CS foundations: algorithms, data structures, OOP, databases, networks.\n" +
-      "• Graduated with projects focused on web applications and UX.",
+      "• Graduated with a very Good grade.",
   },
 ];
 
@@ -74,7 +70,7 @@ function TimelineCard({ item, active }: { item: Item; active: boolean }) {
         </div>
         <h3 className="text-xl leading-tight font-semibold">{item.org}</h3>
         <p className="mt-1 text-[#9780ff]">{item.title} </p>
-        <p className="mt-3 text-white/70 whitespace-pre-line">{item.desc}</p>
+        <p className="mt-3 whitespace-pre-line text-white/70">{item.desc}</p>
         <span className="absolute top-4 right-4 block size-2 rounded-full bg-[#9780ff]" />
       </article>
     </Tilt>
@@ -155,13 +151,12 @@ export default function ExperienceTimeline() {
   return (
     <div id="experience">
       <section className="relative overflow-hidden py-20">
- 
         <SectionHeader
           align="center"
           highlight
           eyebrow="Journey"
           title="Experience that scales"
-          description="A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery." 
+          description="A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery."
           className="z-[50]"
         />
       </section>
