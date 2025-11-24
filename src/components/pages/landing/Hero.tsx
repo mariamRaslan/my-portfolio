@@ -118,7 +118,7 @@ export default function HeroSection() {
                   </Link>
                   <div className="ml-auto flex items-center gap-3">
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/mariamRaslan"
                       target="_blank"
                       className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
                       aria-label="GitHub"
@@ -126,7 +126,7 @@ export default function HeroSection() {
                       <Github className="size-5" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/mariam-raslan-0a02b1192"
                       target="_blank"
                       className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
                       aria-label="LinkedIn"
@@ -134,7 +134,7 @@ export default function HeroSection() {
                       <Linkedin className="size-5" />
                     </a>
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:mariamraslan231@gmail.com"
                       className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
                       aria-label="Email"
                     >
