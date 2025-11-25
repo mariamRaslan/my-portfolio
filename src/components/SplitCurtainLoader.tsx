@@ -207,7 +207,7 @@ export default function SplitCurtainLoader({
           transition={curtainTrans}
         >
           <motion.div
-            className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2"
+            className="pointer-events-none absolute bottom-[-60px] left-1/2 -translate-x-1/2"
             style={{ width: size, height: size }}
             initial={false}
             animate={{ opacity: splitting ? 1 : 0 }} // 🔒 halves hidden until split starts
@@ -240,7 +240,7 @@ export default function SplitCurtainLoader({
           transition={curtainTrans}
         >
           <motion.div
-            className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2"
+            className="pointer-events-none absolute top-[-60px] left-1/2 -translate-x-1/2"
             style={{ width: size, height: size }}
             initial={false}
             animate={{ opacity: splitting ? 1 : 0 }}
