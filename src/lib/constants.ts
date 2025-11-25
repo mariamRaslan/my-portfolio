@@ -72,3 +72,104 @@ export const navlinks = [
     href: "#experience",
   },
 ];
+export const cards = [
+  {
+    bgColor: "#24B094",
+    title: "Dorra Printing",
+    description:
+      "Print-on-demand & editor: product templates, mockups, payments, shipping, and admin dashboards.",
+    tools: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind",
+      "Radix/shadcn",
+      "Fabric.js",
+      "Fawry",
+      "Paymob",
+      "React Hook Form",
+      "Yup",
+    ],
+    link: "https://dorraprint.com",
+    image: "/images/projects/dorra-square.png",
+  },
+  {
+    bgColor: "#ecedf5",
+    title: "Midligner — Dashboards ",
+    description:
+      "Midligner is a digital orthodontic solution that offers clear aligners designed to straighten teeth discreetly and efficiently.\n" +
+      "It connects dentists with orthodontists for case collaboration and tracking.",
+    tools: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Radix/shadcn",
+      "Matrial UI",
+      "React Hook Form",
+      "Zod",
+    ],
+    link: "https://midligner.com",
+    image: "/images/projects/midligner-square.png",
+  },
+  {
+    bgColor: "#024ce6",
+    title: "Pixbyte",
+    description:
+      "Marketing site + feature work: RSC/ISR pages, motion polish, and a reusable UI system. Focused on performance, accessibility, and clean authoring.",
+    tools: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind",
+      "Framer Motion",
+      "shadcn/ui",
+      "ISR",
+      "RSC",
+    ],
+    link: "https://pixbyte.co/",
+    image: "/images/projects/pixbyte-square.png",
+  },
+  {
+    bgColor: "#ff69eb",
+    title: "Mawj",
+    description:
+      "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages.",
+    tools: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind",
+      "Framer Motion",
+      "shadcn/ui",
+      "ISR",
+    ],
+    link: "https://mawj.agency/",
+    image: "/images/projects/mawj-square.png",
+  },
+  {
+    bgColor: "#00b050e6",
+    title: "Metrospeedy — Operations Dashboard",
+    description:
+      "• Built real-time courier/dispatch dashboard: live order feed, SLA alerts, and status timelines.\n" +
+      "• Map views with clustering, courier location, route/ETA, and zone filtering.\n" +
+      "• Analytics widgets and drill-downs (orders, on-time %, courier utilization).",
+    tools: [
+      "React js",
+      "Tailwind",
+      "React Query",
+      "WebSockets (Pusher/Socket.io)",
+      "Map SDK (Mapbox/Google)",
+      "ApexCharts/Recharts",
+      "AG Grid/DataGrid",
+    ],
+    link: "https://www.metrospeedy.com/",
+    image: "/images/projects/metrospeedy-square.png",
+  },
+  {
+    bgColor: "#85a747",
+    title: "TalentKid",
+    description:
+      "• Built a fast, responsive homepage with clean sections and motion polish.\n" +
+      "• Reusable UI primitives and RTL-ready styles; accessible components.\n" ,
+    tools: ["Next.js 15", "TypeScript", "Tailwind", "Framer Motion"],
+    link: "https://talentkid.sa/",
+    image: "/images/projects/talentkid-square.png",
+  },
+];

@@ -100,7 +100,7 @@ function SkillPill({ name, icon }: Skill) {
     <div
       className={cn(
         "group relative inline-flex items-center gap-2 rounded-2xl z-10",
-        "border border-white/10 px-8 py-4 text-sm text-white/90",
+        "border border-white/10 px-4 py-2 sm:px-8 sm:py-4 text-sm text-white/90",
         // no per-pill backdrop blur (the FrostPlate handles it)
         "bg-white/5",
         "transition-shadow duration-300",

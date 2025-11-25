@@ -150,7 +150,7 @@ export default function ExperienceTimeline() {
   const done = pct >= 99.5; // tweak threshold if needed
   return (
     <div id="experience">
-      <section className="relative overflow-hidden py-20">
+      <section className="relative overflow-hidden sm:py-20">
         <SectionHeader
           align="center"
           highlight
@@ -162,7 +162,7 @@ export default function ExperienceTimeline() {
       </section>
       <section
         ref={wrapRef} // <-- attach the ref so progress can be computed
-        className="relative mx-auto max-w-7xl px-4 sm:px-6"
+        className="relative mx-auto max-w-7xl px-4 sm:px-6 mt-5 sm:mt-0"
         style={
           { "--mid": "280px", "--brand": "#9780ff" } as React.CSSProperties
         } // bigger center gap

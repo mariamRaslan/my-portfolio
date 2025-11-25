@@ -98,8 +98,8 @@ export default function ContactSection() {
             </p>
           </header>
 
-          <div className="relative z-10 mx-auto flex flex-col items-center gap-10 rounded-2xl border border-white/10 bg-white/5 px-6 py-8 backdrop-blur-xl max-w-3xl">
-            <div className="w-full grid grid-cols-2 gap-4 px-8">
+          <div className="relative z-10 mx-auto flex flex-col items-center gap-10 rounded-2xl border border-white/10 bg-white/5 sm:px-6 py-8 backdrop-blur-xl max-w-3xl">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 px-8">
               {" "}
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
@@ -131,7 +131,7 @@ export default function ContactSection() {
             <form
               ref={formRef}
               onSubmit={onSubmit}
-              className="grid w-full gap-4 px-8"
+              className="grid w-full gap-4 px-4  sm:px-8"
             >
               <input
                 type="text"
@@ -183,7 +183,7 @@ export default function ContactSection() {
                 </small>
                 <Button
                   variant="animated-gradient"
-                  className="min-w-36"
+                  className="w-36 ms-auto"
                   type="submit"
                   disabled={loading}
                 >

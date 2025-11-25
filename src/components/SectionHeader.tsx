@@ -98,8 +98,8 @@ export default function SectionHeader({
 
         <h2
           className={cn(
-            "font-semibold leading-tight tracking-tight text-balance",
-            titleSize,
+            "font-semibold leading-tight tracking-tight  text-3xl sm:text-4xl",
+         
             highlight &&
               "text-gradient"
           )}
@@ -107,7 +107,7 @@ export default function SectionHeader({
           {title}       
         </h2>
         {description && (
-          <p className={cn("max-w-prose text-pretty text-white/70", align === "center" && "mx-auto")}>{description}</p>
+          <p className={cn("max-w-prose text-pretty text-white/70", align === "center" && "mx-5 sm:mx-auto")}>{description}</p>
         )}
 
         {actions && (
