@@ -74,9 +74,8 @@ export default function MobileMenu() {
             <Image
               src="/images/gradient-logo.png"
               alt="Logo"
-              width={40}
-              height={40}
-              className="opacity-90"
+              width={56}
+              height={56}            
             />
           </Link>
 

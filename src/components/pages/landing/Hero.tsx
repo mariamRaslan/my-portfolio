@@ -41,7 +41,7 @@ export default function HeroSection() {
 
   return (
     <div id="hero">
-      <div className="mx-auto flex w-full flex-col gap-5 pt-10 text-center">
+      <div className="mx-auto flex w-full flex-col gap-5 pt-5 sm:pt-30 lg:pt-10 text-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function HeroSection() {
       </div>
       <section 
         onMouseMove={onMove}
-        className="relative overflow-hidden bg-neutral-950 py-20 md:pt-30"
+        className="relative overflow-hidden bg-neutral-950 py-10 sm:pt-30"
       >
         {/* moving spotlight + subtle grid */}
 
@@ -86,7 +86,7 @@ export default function HeroSection() {
         <div className="relative z-[50] container">
           {/* CONTENT CARD with halo */}
           <div className="mx-auto w-fit rounded-3xl">
-            <div className="rounded-3xl p-[1px] shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_80px_24px_rgba(70,34,233,0.12)]">
+            <div className="rounded-3xl p-[1px] shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_8px_4px_rgba(70,34,233,0.12)] sm:shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_80px_24px_rgba(70,34,233,0.12)]">
               <div className="max-w-[1050px] rounded-3xl border border-white/10 bg-white/5 px-6 py-10 backdrop-blur-xl md:px-12 md:py-14">
                 {/* availability badge */}
                 <div className="mb-6 flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
-                  className="text-3xl font-extrabold tracking-tight text-balance text-white md:text-5xl"
+                  className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight  text-white "
                 >
                   Crafting fast, elegant web apps with
                   <span className="text-gradient-secondary mx-2">Next.js</span>&
@@ -109,7 +109,7 @@ export default function HeroSection() {
                 </motion.h1>
 
                 {/* CTA */}
-                <div className="mt-8 flex flex-wrap items-center gap-3">
+                <div className="mt-8 flex  items-center gap-3">
                   <Link
                     href="#contact"
                     className="rounded-xl border border-white/10 px-8 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
@@ -149,7 +149,7 @@ export default function HeroSection() {
                   <Badge>App Router</Badge>
                   <Badge>Tailwind v4</Badge>
                   <Badge>React Query</Badge>
-                  <div className="mx-2 h-5 w-px bg-white/10" />
+                  <div className="sm:mx-2 h-5 w-px bg-white/10" />
                   <Stat k="3+" v="Years" />
                   <Stat k="10+" v="Projects" />
                 </div>
