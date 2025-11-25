@@ -51,7 +51,7 @@ function Header() {
       <header className="sticky top-5 z-[9999999999]">
         <div className="container">
           {/* wrapper MUST be isolate to keep the negative z child visible */}
-          <div className="relative isolate z-0 mx-auto w-fit">
+          <div className="hidden lg:flex relative isolate z-0 mx-auto w-fit">
             {/* glow behind the whole navbar */}
 
             {/* navbar capsule */}
@@ -63,7 +63,7 @@ function Header() {
                 "shadow-[0_0_120px_40px_rgba(151,128,255,0.16),_0_0_80px_24px_rgba(70,34,233,0.12)]",
               )}
             >
-              <nav className="hidden items-center gap-1 lg:flex">
+              <nav className=" items-center gap-1 lg:flex">
                 {navlinks.map((link) => {
                   const isActive =
                     pathname === link.href ||
@@ -99,12 +99,14 @@ function Header() {
                 </Link>
               </nav>
 
-              <div className="flex gap-4 lg:gap-6">
-                <MobileMenu />
-              </div>
             </div>
           </div>
+          
+              <div className="flex   justify-end w-full">
+                <MobileMenu />
+              </div>
         </div>
+        
       </header>
     </>
   );
