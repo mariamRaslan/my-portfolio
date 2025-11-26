@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import SplashCursor from "@/components/SplashCursor";
+const CV_URL = "/files/Mariam-Raslan-CV.pdf";
 
 /**
  * Drop-in animated hero for a portfolio
@@ -67,9 +67,11 @@ export default function HeroSection() {
           </AnimatePresence>
         </div>
         <Button variant={"animated-gradient"} className="z-[50] mx-auto w-fit">
+           <a href={CV_URL} target="_blank" rel="noreferrer">
           <div className="flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm">
             <Download className="size-4" /> <span>Download CV</span>
           </div>
+          </a>
         </Button>
       </div>
       <section 

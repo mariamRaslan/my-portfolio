@@ -19,6 +19,7 @@ import { motion } from "framer-motion";
 export default function MobileMenu() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+   const year = new Date().getFullYear();
 
   // Close on route change
   React.useEffect(() => {
@@ -127,7 +128,7 @@ export default function MobileMenu() {
         {/* Footer note (optional) */}
         <div className="mt-auto border-t border-white/10 px-4 py-4">
           <p className="text-xs text-white/50">
-            © 2025 Mariam Raslan. All rights reserved.
+            © {year} Mariam Raslan. All rights reserved.
           </p>
         </div>
       </SheetContent>

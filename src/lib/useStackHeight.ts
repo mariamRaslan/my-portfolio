@@ -15,26 +15,26 @@ export function useStackHeight(total: number) {
 
       let factor: number;
       if (w === 1024)
-        factor = 0.45; // exactly 1024
-      else if (w === 375) factor = 0.85;
-      else if (w === 412) factor = 0.57;
-      else if (w >= 1920) factor = 0.72;
+        factor = 0.46; // exactly 1024
+      else if (w === 375) factor = 0.86;
+      else if (w === 412) factor = 0.58;
+      else if (w >= 1920) factor = 0.73;
       else if (w >= 1025)
-        factor = 0.82; // desktops above 1024
+        factor = 0.83; // desktops above 1024
       else if (w >= 912)
-        factor = 0.4; // 768–1023
+        factor = 0.5; // 768–1023
       else if (w >= 820)
-        factor = 0.48; // 768–1023
+        factor = 0.49; // 768–1023
       else if (w >= 768)
-        factor = 0.58; // 768–820
+        factor = 0.59; // 768–820
       else if (w >= 540)
-        factor = 0.78; // 768–820
+        factor = 0.79; // 768–820
       else if (w >= 414)
-        factor = 0.58; // 768–820
+        factor = 0.59; // 768–820
       else if (w >= 390)
-        factor = 0.63; // 768–820
+        factor = 0.64; // 768–820
       else if (w >= 360)
-        factor = 0.75; // 768–820
+        factor = 0.76; // 768–820
       else factor = 0.75; // mobiles
 
       // Optionally clamp to avoid absurdly long stacks on tiny landscape

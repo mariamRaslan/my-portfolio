@@ -4,12 +4,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { Readex_Pro } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
-import { getPublicData } from "@/config/client-fetch";
-import { IHomeServices } from "@/types/home.type";
 import NextTopLoader from "nextjs-toploader";
 import SplashCursor from "@/components/SplashCursor";
 import SplitCurtainLoader from "@/components/SplitCurtainLoader";
-import { Suspense, useContext, useEffect, useState } from "react";
+
 
 const readexPro = Readex_Pro({
   weight: ["400", "500", "600", "700"],
@@ -51,12 +49,12 @@ export default async function RootLayout({ children, params }: Props) {
 
           <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
             <div className="pointer-events-none fixed inset-0 z-1">
-              {/* <SplashCursor /> */}
+              <SplashCursor />
             </div>
 
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
           <NextTopLoader color="#00B9AD" />
         </NextIntlClientProvider>
         <SplitCurtainLoader

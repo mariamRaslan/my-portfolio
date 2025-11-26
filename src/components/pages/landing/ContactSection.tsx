@@ -5,7 +5,7 @@ import * as React from "react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import FrostPlate from "@/components/FrostPlate";
-import { Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const CONTACT_EMAIL =
   process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@example.com";
@@ -203,6 +203,31 @@ export default function ContactSection() {
               )}
             </form>
           </div>
+           <div className="mx-auto mt-5 w-full  flex justify-center items-center gap-3">
+                    <a
+                      href="https://github.com/mariamRaslan"
+                      target="_blank"
+                      className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
+                      aria-label="GitHub"
+                    >
+                      <Github className="size-5" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/mariam-raslan-0a02b1192"
+                      target="_blank"
+                      className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="size-5" />
+                    </a>
+                    <a
+                      href="mailto:mariamraslan231@gmail.com"
+                      className="rounded-lg border border-white/10 p-2 text-white/80 hover:bg-white/10"
+                      aria-label="Email"
+                    >
+                      <Mail className="size-5" />
+                    </a>
+                  </div>
         </div>
       </div>
     </section>

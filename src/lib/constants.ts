@@ -127,6 +127,23 @@ export const cards = [
     link: "https://pixbyte.co/",
     image: "/images/projects/pixbyte-square.png",
   },
+    {
+    bgColor: "#4ebc49",
+    title: "DirulWatan",
+    description:
+     "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages.",
+    tools: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind",
+      "Framer Motion",
+      "shadcn/ui",
+      "ISR",
+      "RSC",
+    ],
+    link: "https://dirulwatan.sa/",
+    image: "/images/projects/watan-square.png",
+  },
   {
     bgColor: "#ff69eb",
     title: "Mawj",
