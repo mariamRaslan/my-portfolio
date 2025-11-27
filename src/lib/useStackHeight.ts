@@ -32,7 +32,7 @@ export function useStackHeight(total: number) {
       else if (w >= 414)
         factor = 0.59;
       else if (w >= 390)
-        factor = 0.67; 
+        factor = 0.72; 
       else if (w >= 360)
         factor = 0.76;
       else factor = 0.75; // mobiles

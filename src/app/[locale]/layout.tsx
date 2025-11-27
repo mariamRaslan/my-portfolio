@@ -49,7 +49,7 @@ export default async function RootLayout({ children, params }: Props) {
 
           <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
             <div className="pointer-events-none fixed inset-0 z-1">
-              <SplashCursor />
+              {/* <SplashCursor /> */}
             </div>
 
             {children}
@@ -59,7 +59,6 @@ export default async function RootLayout({ children, params }: Props) {
         </NextIntlClientProvider>
         <SplitCurtainLoader
           logoSrc="/images/white-logo.png"
-  
           bgGradient="linear-gradient(90deg, #6e17b4 0.01%, #f59e0b 100%)"
           fg="#ffffff"
            durationMs={1600}        // how long it waits BEFORE splitting
