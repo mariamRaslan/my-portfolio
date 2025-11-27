@@ -74,12 +74,13 @@ const StackingCardItem = ({
   const rangeScale = [index * (1 / totalCards), 1]
   const scale = useTransform(progress, rangeScale, [1, scaleTo])
   const top = topPosition ?? `${18 + index * 3}%`
+   const bottom = topPosition ?? `${18 + index * 3}%`
 
   return (
     <div className={cn("h-full sticky top-0", className)} {...props}>
       <motion.div
         className={"origin-top relative h-full"}
-        style={{ top, scale }}
+        style={{ top, scale,bottom }}
       >
         {children}
       </motion.div>
