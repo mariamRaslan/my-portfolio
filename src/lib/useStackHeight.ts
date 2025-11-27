@@ -26,15 +26,15 @@ export function useStackHeight(total: number) {
       else if (w >= 820)
         factor = 0.49; // 768–1023
       else if (w >= 768)
-        factor = 0.59; // 768–820
+        factor = 0.59; 
       else if (w >= 540)
-        factor = 0.79; // 768–820
+        factor = 0.79;
       else if (w >= 414)
-        factor = 0.59; // 768–820
+        factor = 0.59;
       else if (w >= 390)
-        factor = 0.64; // 768–820
+        factor = 0.67; 
       else if (w >= 360)
-        factor = 0.76; // 768–820
+        factor = 0.76;
       else factor = 0.75; // mobiles
 
       // Optionally clamp to avoid absurdly long stacks on tiny landscape

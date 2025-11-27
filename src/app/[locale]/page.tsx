@@ -22,6 +22,6 @@ export default async function Home() {
       <ExperienceTimeline />
       <SkillsSlider skills={SKILLS} />
       <ContactSection />
-    </section>
+    </section> 
   );
 }

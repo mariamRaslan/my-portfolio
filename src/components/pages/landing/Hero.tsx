@@ -41,7 +41,7 @@ export default function HeroSection() {
 
   return (
     <div id="hero">
-      <div className="mx-auto flex w-full flex-col gap-5 pt-5 sm:pt-30 lg:pt-10 text-center">
+      <div className="mx-auto flex w-full flex-col gap-5 pt-0 sm:pt-30 lg:pt-10 text-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -76,14 +76,14 @@ export default function HeroSection() {
       </div>
       <section 
         onMouseMove={onMove}
-        className="relative overflow-hidden bg-neutral-950 py-10 sm:pt-30"
+        className="relative  bg-neutral-950 py-12 sm:pt-30"
       >
         {/* moving spotlight + subtle grid */}
 
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 z-0 [background-image:radial-gradient(rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:22px_22px] [background-position:0_0] opacity-[0.15]"
-        />
+        /> 
 
         <div className="relative z-[50] container">
           {/* CONTENT CARD with halo */}
