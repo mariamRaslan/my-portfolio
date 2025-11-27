@@ -157,7 +157,7 @@ export default function ExperienceTimeline() {
           eyebrow="Journey"
           title="Experience that scales"
           description="A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery."
-          className="z-[50]"
+          className="z-[9]"
         />
       </section>
       <section
