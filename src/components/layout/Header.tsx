@@ -35,20 +35,13 @@ function Header() {
       {/* scroll progress */}
       <motion.div
         aria-hidden
-        className="from-primary-800 fixed top-0 right-0 left-0 z-[999] h-[3px] origin-left bg-gradient-to-r via-fuchsia-500 to-amber-400"
+        className="from-primary-800 fixed top-0 right-0 left-0 z-[9] h-[3px] origin-left bg-gradient-to-r via-fuchsia-500 to-amber-400"
         style={{ scaleX }}
       />
 
-      {/* overlay */}
-      {open && (
-        <button
-          aria-label="إغلاق القائمة"
-          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
-          onClick={() => setOpen(false)}
-        />
-      )}
 
-      <header className="sticky top-5 z-[9999999999]">
+
+      <header className="sticky top-5 z-[99]">
         <div className="container">
           {/* wrapper MUST be isolate to keep the negative z child visible */}
           <div className="hidden lg:flex relative isolate z-0 mx-auto w-fit">

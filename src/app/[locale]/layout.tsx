@@ -8,7 +8,6 @@ import NextTopLoader from "nextjs-toploader";
 import SplashCursor from "@/components/SplashCursor";
 import SplitCurtainLoader from "@/components/SplitCurtainLoader";
 
-
 const readexPro = Readex_Pro({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
@@ -44,12 +43,20 @@ export default async function RootLayout({ children, params }: Props) {
         className={`${readexPro.className} ${readexPro.variable} bg-neutral-950`}
         suppressHydrationWarning={true}
       >
+        <SplitCurtainLoader
+          logoSrc="/images/white-logo.png"
+          bgGradient="linear-gradient(90deg, #6e17b4 0.01%, #f59e0b 100%)"
+          fg="#ffffff"
+          durationMs={1600}
+          splitDurationMs={3000}
+          onlyOnce={false}
+        />
         <NextIntlClientProvider>
           <Header />
 
           <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
-            <div className="pointer-events-none fixed inset-0 z-1">
-              {/* <SplashCursor /> */}
+            <div className="pointer-events-none fixed inset-0 z-[1]">
+              <SplashCursor />
             </div>
 
             {children}
@@ -57,14 +64,6 @@ export default async function RootLayout({ children, params }: Props) {
           <Footer />
           <NextTopLoader color="#00B9AD" />
         </NextIntlClientProvider>
-        <SplitCurtainLoader
-          logoSrc="/images/white-logo.png"
-          bgGradient="linear-gradient(90deg, #6e17b4 0.01%, #f59e0b 100%)"
-          fg="#ffffff"
-           durationMs={1600}        // how long it waits BEFORE splitting
-           splitDurationMs={3000}   // how long the split movement takes
-          onlyOnce={false}
-        />
       </body>
     </html>
   );

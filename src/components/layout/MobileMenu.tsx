@@ -80,13 +80,13 @@ export default function MobileMenu() {
             />
           </Link>
 
-          <button
+          {/* <button
             aria-label="Close menu"
             onClick={() => setOpen(false)}
             className="rounded-xl p-2 text-white/80 hover:bg-white/10"
           >
             <X className="h-5 w-5" />
-          </button>
+          </button> */}
         </SheetHeader>
 
         {/* Nav list */}
