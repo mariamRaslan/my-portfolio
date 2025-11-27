@@ -183,7 +183,7 @@ export default function ExperienceTimeline() {
         </div>
 
         {/* rows */}
-        <div className="relative z-[99999999999999] grid gap-y-20 lg:grid-cols-[minmax(0,1fr)_var(--mid)_minmax(0,1fr)]">
+        <div className="relative z-[9] grid gap-y-20 lg:grid-cols-[minmax(0,1fr)_var(--mid)_minmax(0,1fr)]">
           {items.map((item, i) => {
             const left = i % 2 === 0;
             const isActive = i === activeIndex;
