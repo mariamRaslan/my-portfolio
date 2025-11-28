@@ -20,7 +20,7 @@ export function useStackHeight(total: number) {
       else if (w === 412) factor = 0.58;
       else if (w >= 1920) factor = 0.73;
       else if (w >= 1025)
-        factor = 0.83; // desktops above 1024
+        factor = 1.15; // desktops above 1024
       else if (w >= 912)
         factor = 0.5; // 768–1023
       else if (w >= 820)

@@ -7,12 +7,7 @@ import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const CV_URL = "/files/Mariam-Raslan-CV.pdf";
 
-/**
- * Drop-in animated hero for a portfolio
- * --------------------------------------------------------------
- * npm i framer-motion lucide-react
- * TailwindCSS v4 classes used
- */
+
 
 const TITLES = [
   "Frontend Developer",
@@ -76,7 +71,7 @@ export default function HeroSection() {
       </div>
       <section 
         onMouseMove={onMove}
-        className="relative  bg-neutral-950 py-12 sm:pt-30"
+        className="relative  bg-neutral-950 py-12  2xl:pt-30 "
       >
         {/* moving spotlight + subtle grid */}
 
@@ -114,7 +109,7 @@ export default function HeroSection() {
                 <div className="mt-8 flex  items-center gap-3">
                   <Link
                     href="#contact"
-                    className="rounded-xl border border-white/10 px-8 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
+                    className="rounded-xl border border-white/10 px-5 sm:px-8 py-2 sm:py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
                   >
                     Contact me
                   </Link>
