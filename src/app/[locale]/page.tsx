@@ -1,7 +1,6 @@
 
 import { getTranslations } from "next-intl/server";
 
-import SplashCursor from "@/components/SplashCursor";
 import Hero from "@/components/pages/landing/Hero";
 import { SKILLS } from "@/lib/constants";
 import SkillsSlider from "@/components/pages/landing/SkillsSlider";

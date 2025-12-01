@@ -1,166 +1,199 @@
 {
-  "header": {
-    "home": {
-      "title": "Home"
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact_me": "Contact me"
+  },
+  "hero": {
+    "name": "Mariam Raslan",
+    "titles": {
+      "frontend": "Frontend Developer",
+      "next": "Next.js Specialist",
+      "uiux": "UI/UX Crafter",
+      "perf": "Performance Tuner"
     },
-    "about": {
-      "title": "About us"
+    "availability": "Available for freelance / Full Time",
+    "heading": {
+      "prefix": "Crafting fast, elegant web apps with"
     },
-    "council": {
-      "title": "Consultation"
+    "cta": {
+      "downloadCv": "Download CV",
+      "downloadCvAria": "Download my CV as PDF",
+      "contactMe": "Contact me"
     },
-    "contact": {
-      "title": "Contact us"
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "Email"
     },
-    "services": {
-      "title": "Services",
-      "popover-header": "Specialization Fields and Services for Homeland Shield Company",
-      "popover-btn": "View All Services",
-      "sublinks": {
-        "service1": "Government Cloud Security Solutions",
-        "service2": "Critical Infrastructure Protection",
-        "service3": "Secure Communications Platforms",
-        "service4": "Digital Forgery Detection Solutions",
-        "service5": "Consulting Services",
-        "service6": "Private Sector Solutions"
+    "badges": {
+      "next15": "Next.js 15",
+      "appRouter": "App Router",
+      "tailwind4": "Tailwind v4",
+      "reactQuery": "React Query"
+    },
+    "stats": {
+      "years": {
+        "k": "3+",
+        "v": "Years"
+      },
+      "projects": {
+        "k": "10+",
+        "v": "Projects"
+      }
+    },
+    "scroll": "Scroll"
+  },
+  "projects": {
+    "eyebrow": "Showcase",
+    "title": "Projects that ship",
+    "description": "Real-world builds where performance, accessibility, and motion all work together.",
+    "visitProject": "Visit project",
+    "cards": {
+      "dorra": {
+        "title": "Dorra Printing",
+        "description": "Print-on-demand & editor: product templates, mockups, payments, shipping, and admin dashboards."
+      },
+      "midligner": {
+        "title": "Midligner — Dashboards",
+        "description": "Midligner is a digital orthodontic solution for clear aligners.\nIt connects dentists with orthodontists for case collaboration and tracking."
+      },
+      "pixbyte": {
+        "title": "Pixbyte",
+        "description": "Marketing site + feature work: RSC/ISR pages, motion polish, and a reusable UI system. Focused on performance, accessibility, and clean authoring."
+      },
+      "watan": {
+        "title": "DirulWatan",
+        "description": "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages."
+      },
+      "mawj": {
+        "title": "Mawj",
+        "description": "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages."
+      },
+      "metrospeedy": {
+        "title": "Metrospeedy — Operations Dashboard",
+        "description": "• Built real-time courier/dispatch dashboard.\n• Map views with clustering, courier location, route/ETA, and zone filtering.\n• Analytics widgets and drill-downs (orders, on-time %, courier utilization)."
+      },
+      "talentkid": {
+        "title": "TalentKid",
+        "description": "• Built a fast, responsive homepage with clean sections and motion polish.\n• Reusable UI primitives and RTL-ready styles; accessible components."
       }
     }
   },
-  "stats": {
-    "reports": "Reports",
-    "certificates": "Certificates",
-    "partners": "Partners",
-    "clients": "Clients",
-    "reportsAlt": "Reports icon",
-    "certificatesAlt": "Certificates icon",
-    "partnersAlt": "Partners icon",
-    "clientsAlt": "Clients icon"
+  "tech": {
+    "next15": "Next.js 15",
+    "next": "Next.js",
+    "ts": "TypeScript",
+    "tailwind": "Tailwind",
+    "radix": "Radix/shadcn",
+    "fabric": "Fabric.js",
+    "fawry": "Fawry",
+    "paymob": "Paymob",
+    "rhf": "React Hook Form",
+    "yup": "Yup",
+    "mui": "Material UI",
+    "zod": "Zod",
+    "framer": "Framer Motion",
+    "shadcn": "shadcn/ui",
+    "isr": "ISR",
+    "rsc": "RSC",
+    "react": "React js",
+    "rq": "React Query",
+    "ws": "WebSockets (Socket.io)",
+    "map": "Map SDK (Google)",
+    "charts": "ApexCharts/Recharts",
+    "grid": "AG Grid/DataGrid"
   },
-  "footer": {
-    "headers": {
-      "links": "Important Links",
-      "contact": "Contact Us"
-    },
-    "description": "Providing security consultations and cybersecurity solutions to protect the national digital system in accordance with international standards and the Kingdom of Saudi Arabia's Vision 2030.",
-    "privacy-policy": "Privacy Policy",
-    "terms-and-conditions": "Terms and Conditions",
-    "copyright": {
-      "part1": "All Rights Reserved",
-      "part2": "DirulWatan",
-      "part3": "Designed and Programmed by"
+  "experience": {
+    "eyebrow": "Journey",
+    "title": "Experience that scales",
+    "description": "A concise timeline of roles and shipped outcomes—collaboration, iteration, and delivery.",
+    "items": {
+      "px": {
+        "date": "Jan 2025 - present",
+        "org": "Pixbyte",
+        "title": "Frontend Developer",
+        "desc": "• Owning the web frontend in Next.js 15 (App Router, RSC) with TypeScript & Tailwind.\n• Built a reusable UI kit (Radix + shadcn) and SSR/ISR + React Query data layer.\n"
+      },
+      "ml": {
+        "date": "Jul 2023 - Jan 2025",
+        "org": "Mobileaders",
+        "title": "Frontend Developer",
+        "desc": "• Shipped accessible, RTL-ready UIs and form flows (React Hook Form + Zod).\n• Built dashboards, role/permission-based admin, and i18n with full RTL support.\n"
+      },
+      "iti": {
+        "date": "Oct 2022 - Jun 2023",
+        "org": "Information Technology Institute (ITI)",
+        "title": "9 month trainee",
+        "desc": "9 Month professional Diploma, open source application development track."
+      },
+      "bsc": {
+        "date": "2017 - 2021",
+        "org": "Faculty of Computer and Information Science",
+        "title": "BSc — Information Technology",
+        "desc": "• Core CS foundations: algorithms, data structures, OOP, databases, networks.\n• Graduated with a very Good grade."
+      }
+    }
+  },
+  "skills": {
+    "title": "My Full Tech Stack",
+    "description": "Frontend architecture, component libraries, performance profiling, and smooth interactions — all wired to real-world delivery.",
+    "names": {
+      "next": "Next.js",
+      "ts": "TypeScript",
+      "tailwind": "Tailwind",
+      "react": "React",
+      "framer": "Framer Motion",
+      "shadcn": "shadcn/ui",
+      "radix": "Radix UI",
+      "rq": "React Query",
+      "zod": "Zod",
+      "mui": "Material UI"
     }
   },
   "contact": {
-    "reach-us": "Or you can reach us through social media",
-    "email": "Our Email",
-    "title": "We're happy to hear from you",
-    "subtitle": "Complete the following information and we will respond to you as soon as possible",
-    "contact-us": " Contact us",
-    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions"
-  },
-  "council": {
-    "title": "Request your consultation now",
-    "subtitle": {
-      "part1": "The",
-      "part2": "DirulWatan",
-      "part3": "team is ready to help you reach a more secure digital environment"
+    "eyebrow": "Get in touch",
+    "title": "Let’s build something",
+    "subtitle": "Tell me a bit about your project and how I can help.",
+    "orUseForm": "Or use the form",
+    "fields": {
+      "name": {
+        "label": "Your name",
+        "placeholder": "Jane Doe"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "jane@example.com"
+      },
+      "phone": {
+        "label": "Phone (optional)",
+        "placeholder": "+20 10 1234 5678"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "What are you building?"
+      }
     },
-    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions",
-    "consultation": "Consultation"
-  },
-  "form": {
-    "name": {
-      "label": "Name",
-      "placeholder": "Enter name"
+    "privacy": "I’ll reply within 24–48h. Your info stays private.",
+    "cta": {
+      "send": "Send message",
+      "sending": "Sending..."
     },
-    "email": {
-      "label": "Email",
-      "placeholder": "Enter email"
+    "status": {
+      "ok": "Thanks! Your message is on its way.",
+      "fail": "Sorry—something went wrong. Please try again."
     },
-    "phone": {
-      "label": "Phone Number",
-      "placeholder": "Enter phone number"
+    "errors": {
+      "name": "Please enter your name",
+      "email": "Enter a valid email",
+      "phone": "Enter a valid phone",
+      "message": "A bit more detail helps"
     },
-    "council_type": {
-      "label": "Consultation Type",
-      "placeholder": "Select consultation type"
-    },
-    "content": {
-      "label": "Message",
-      "placeholder": "Enter message"
-    },
-    "message": {
-      "label": "Message",
-      "placeholder": "Enter message"
-    },
-    "files": {
-      "label": "Files",
-      "placeholder": "Add file from here",
-      "allowed_types": "Allowed file types",
-      "max_size": "Maximum file size"
-    },
-    "send": "Send",
-    "contact-modal": "Thank you for your contacting request",
-    "modal": "Thank you for your consultation request"
-  },
-  "errors": {
-    "name": {
-      "min": "Name must be at least 3 characters.",
-      "max": "Name must be at most 50 characters."
-    },
-    "email": {
-      "required": "Email is required."
-    },
-    "phone": {
-      "invalid": "Phone number must be between 8 and 15 digits, and must not contain the '+' symbol or letters."
-    },
-    "council_type": {
-      "min": "Council type must be at least 1 character."
-    },
-    "content": {
-      "min": "Message must be at least 10 characters."
-    },
-    "message": {
-      "min": "Message must be at least 10 characters."
+    "aria": {
+      "email": "Email",
+      "phone": "Phone"
     }
   },
-  "specialization_fields_and_services": "Specialization Fields and Services",
-  "About": {
-    "breadcrumbHeader": "DirulWatan for Security Consulting & Cybersecurity Solutions",
-    "breadcrumbTitle": "About DirulWatan",
-    "aboutTitle": "About Us",
-    "aboutDescription": "We are a specialized company in security consulting and cybersecurity solutions, offering integrated services to protect your business.",
-    "aboutAlt": "About DirulWatan",
-    "countriesTitle": "Our Global Presence",
-    "usa": "United States of America",
-    "india": "India",
-    "china": "China",
-    "vision": "Vision",
-    "mission": "Mission",
-    "visionText": "We strive to be leaders in delivering trusted cybersecurity solutions.",
-    "missionText": "Our mission is to protect organizations through innovative and effective strategies.",
-    "valuesTitle": "Core Values at",
-    "companyName": "DirulWatan",
-    "noValues": "No core values have been recorded yet."
-  },
-  "Services": {
-    "breadcrumbTitle": "Services",
-    "breadcrumbHeader": "DirulWatan for Security Consulting and Cybersecurity Solutions"
-  },
-  "whyUs": {
-    "brand": "DirulWatan",
-    "title": "Why choose to work with <brand>DirulWatan</brand>?",
-    "subtitle": "The <brand>DirulWatan</brand> team stands out with many qualities that position us as leaders in cybersecurity.",
-    "feature1": "Internationally certified experts in cybersecurity."
-  },
-   "home": {
-    "certificates": {
-      "title": "<brand>DirulWatan</brand> Certificates",
-      "subtitle": "Our certifications affirm our commitment to quality standards"
-    },
-    "partners": {
-      "title": "Partners"
-    }},
-    "solutions_section_title": "<gradient>Specialized</gradient> Solutions in Multiple Sectors",
-    "show_more":"Show more"
+  "footer":{"copy": "© {year} {name}. All rights reserved."}
 }

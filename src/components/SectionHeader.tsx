@@ -98,7 +98,7 @@ export default function SectionHeader({
 
         <h2
           className={cn(
-            "font-semibold leading-tight tracking-tight  text-3xl sm:text-4xl",
+            "font-semibold leading-tight tracking-tight  text-3xl sm:text-4xl py-3",
          
             highlight &&
               "text-gradient"

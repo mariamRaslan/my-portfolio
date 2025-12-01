@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: Props) {
   const locale = (await params).locale;
 
   return (
-    <html dir={"ltr"} className="scroll-smooth">
+    <html dir={locale==="en"?"ltr":"rtl"} className="scroll-smooth">
       <body
         className={`${readexPro.className} ${readexPro.variable} bg-neutral-950`}
         suppressHydrationWarning={true}
@@ -56,7 +56,7 @@ export default async function RootLayout({ children, params }: Props) {
 
           <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
             <div className="pointer-events-none fixed inset-0 z-[1]">
-              <SplashCursor />
+              {/* <SplashCursor /> */}
             </div>
 
             {children}

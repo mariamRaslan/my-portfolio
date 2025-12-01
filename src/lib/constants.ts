@@ -57,135 +57,90 @@ export const SKILLS = [
   { name: "Git", icon: "/images/tech/git.png" },
   { name: "JQuery", icon: "/images/tech/jquery.png" },
 ];
-
 export const navlinks = [
-  {
-    title: "Home",
-    href: "/",
-  },
-  {
-    title: "Projects",
-    href: "#projects",
-  },
-  {
-    title: "Experience ",
-    href: "#experience",
-  },
+  { key: "nav.home", href: "/" },
+  { key: "nav.projects", href: "#projects" },
+  { key: "nav.experience", href: "#experience" },
 ];
-export const cards = [
+export type ProjectCard = {
+  bgColor: string;
+  image: string;
+  link?: string;
+  titleKey: string;
+  descriptionKey: string;
+  toolKeys: string[];
+};
+export const cards: ProjectCard[] = [
   {
     bgColor: "#24B094",
-    title: "Dorra Printing",
-    description:
-      "Print-on-demand & editor: product templates, mockups, payments, shipping, and admin dashboards.",
-    tools: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind",
-      "Radix/shadcn",
-      "Fabric.js",
-      "Fawry",
-      "Paymob",
-      "React Hook Form",
-      "Yup",
+    titleKey: "projects.cards.dorra.title",
+    descriptionKey: "projects.cards.dorra.description",
+    toolKeys: [
+      "tech.next15",
+      "tech.ts",
+      "tech.tailwind",
+      "tech.radix",
+      "tech.fabric",
+      "tech.fawry",
+      "tech.paymob",
+      "tech.rhf",
+      "tech.yup"
     ],
     link: "https://dorraprint.com",
     image: "/images/projects/dorra-square.png",
   },
   {
     bgColor: "#ecedf5",
-    title: "Midligner — Dashboards ",
-    description:
-      "Midligner is a digital orthodontic solution that offers clear aligners designed to straighten teeth discreetly and efficiently.\n" +
-      "It connects dentists with orthodontists for case collaboration and tracking.",
-    tools: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind",
-      "Radix/shadcn",
-      "Matrial UI",
-      "React Hook Form",
-      "Zod",
-    ],
+    titleKey: "projects.cards.midligner.title",
+    descriptionKey: "projects.cards.midligner.description",
+    toolKeys: ["tech.next", "tech.ts", "tech.tailwind", "tech.radix", "tech.mui", "tech.rhf", "tech.zod"],
     link: "https://midligner.com",
     image: "/images/projects/midligner-square.png",
   },
   {
     bgColor: "#024ce6",
-    title: "Pixbyte",
-    description:
-      "Marketing site + feature work: RSC/ISR pages, motion polish, and a reusable UI system. Focused on performance, accessibility, and clean authoring.",
-    tools: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind",
-      "Framer Motion",
-      "shadcn/ui",
-      "ISR",
-      "RSC",
-    ],
+    titleKey: "projects.cards.pixbyte.title",
+    descriptionKey: "projects.cards.pixbyte.description",
+    toolKeys: ["tech.next15", "tech.ts", "tech.tailwind", "tech.framer", "tech.shadcn", "tech.isr", "tech.rsc"],
     link: "https://pixbyte.co/",
     image: "/images/projects/pixbyte-square.png",
   },
-    {
+  {
     bgColor: "#4ebc49",
-    title: "DirulWatan",
-    description:
-     "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages.",
-    tools: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind",
-      "Framer Motion",
-      "shadcn/ui",
-      "ISR",
-      "RSC",
-    ],
+    titleKey: "projects.cards.watan.title",
+    descriptionKey: "projects.cards.watan.description",
+    toolKeys: ["tech.next15", "tech.ts", "tech.tailwind", "tech.framer", "tech.shadcn", "tech.isr", "tech.rsc"],
     link: "https://dirulwatan.sa/",
     image: "/images/projects/watan-square.png",
   },
   {
     bgColor: "#ff69eb",
-    title: "Mawj",
-    description:
-      "Agency site focused on speed, accessibility, and smooth motion. Built responsive/RTL-first layouts, reusable components, and SEO-friendly pages.",
-    tools: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind",
-      "Framer Motion",
-      "shadcn/ui",
-      "ISR",
-    ],
+    titleKey: "projects.cards.mawj.title",
+    descriptionKey: "projects.cards.mawj.description",
+    toolKeys: ["tech.next15", "tech.ts", "tech.tailwind", "tech.framer", "tech.shadcn", "tech.isr"],
     link: "https://mawj.agency/",
     image: "/images/projects/mawj-square.png",
   },
   {
     bgColor: "#00b050e6",
-    title: "Metrospeedy — Operations Dashboard",
-    description:
-      "• Built real-time courier/dispatch dashboard: live order feed, SLA alerts, and status timelines.\n" +
-      "• Map views with clustering, courier location, route/ETA, and zone filtering.\n" +
-      "• Analytics widgets and drill-downs (orders, on-time %, courier utilization).",
-    tools: [
-      "React js",
-      "Tailwind",
-      "React Query",
-      "WebSockets (Pusher/Socket.io)",
-      "Map SDK (Mapbox/Google)",
-      "ApexCharts/Recharts",
-      "AG Grid/DataGrid",
+    titleKey: "projects.cards.metrospeedy.title",
+    descriptionKey: "projects.cards.metrospeedy.description",
+    toolKeys: [
+      "tech.react",
+      "tech.tailwind",
+      "tech.rq",
+      "tech.map",
+      "tech.charts",
+
     ],
     link: "https://www.metrospeedy.com/",
     image: "/images/projects/metrospeedy-square.png",
   },
   {
     bgColor: "#85a747",
-    title: "TalentKid",
-    description:
-      "• Built a fast, responsive homepage with clean sections and motion polish.\n" +
-      "• Reusable UI primitives and RTL-ready styles; accessible components.\n" ,
-    tools: ["Next.js 15", "TypeScript", "Tailwind", "Framer Motion"],
+    titleKey: "projects.cards.talentkid.title",
+    descriptionKey: "projects.cards.talentkid.description",
+    toolKeys: ["tech.next15", "tech.ts", "tech.tailwind", "tech.framer"],
     link: "https://talentkid.sa/",
     image: "/images/projects/talentkid-square.png",
   },

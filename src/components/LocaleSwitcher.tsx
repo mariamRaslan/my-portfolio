@@ -16,7 +16,7 @@ function LocaleSwitcher({ className }: { className?: string }) {
       locale={locale === "ar" ? "en" : "ar"}
     >
       <span>{locale === "ar" ? "EN" : "AR"}</span>
-      <Globe className="size-6" />
+      <Globe className="size-5" />
     </Link>
   );
 }
