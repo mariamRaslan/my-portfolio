@@ -109,7 +109,7 @@ export default function HeroSection() {
                 <div className="mt-8 flex items-center gap-3">
                   <Link
                     href="#contact"
-                    className="rounded-xl border border-white/10 px-8 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
+                    className="rounded-xl border border-white/10 px-5 sm:px-8 py-2 sm:py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
                   >
                     {t("hero.cta.contactMe")}
                   </Link>
