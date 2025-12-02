@@ -13,7 +13,8 @@ import { useTranslations } from "next-intl";
 function Header() {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
-  const t = useTranslations(); 
+  const t = useTranslations();
+
 
   React.useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

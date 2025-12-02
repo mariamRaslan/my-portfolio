@@ -15,8 +15,9 @@ function LocaleSwitcher({ className }: { className?: string }) {
       href={`/${pathName}`}
       locale={locale === "ar" ? "en" : "ar"}
     >
+        <Globe className="size-5" />
       <span>{locale === "ar" ? "EN" : "AR"}</span>
-      <Globe className="size-5" />
+    
     </Link>
   );
 }

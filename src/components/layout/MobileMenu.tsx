@@ -15,11 +15,15 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations ,useLocale} from "next-intl";
+import LocaleSwitcher from "../LocaleSwitcher";
 
 export default function MobileMenu() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
    const year = new Date().getFullYear();
+     const t = useTranslations(); 
+     const locale =useLocale ();
 
   // Close on route change
   React.useEffect(() => {
@@ -42,7 +46,7 @@ export default function MobileMenu() {
     <Sheet open={open} onOpenChange={setOpen}>
       {/* Fixed button at the RIGHT on mobile, hidden when open */}
       {!open && (
-        <div className="fixed top-[22px] right-4 z-[1000] lg:hidden">
+        <div className={`fixed top-[22px] ${locale==="ar"?"left":"right-4"}  z-[1000] lg:hidden`}>
           <SheetTrigger
             aria-label="Open menu"
             className={cn(
@@ -56,7 +60,7 @@ export default function MobileMenu() {
       )}
 
       <SheetContent
-        side="right"
+        side={`${locale==="ar"?"left":"right"}`}
         className={cn(
           "z-[1001] w-[88vw] max-w-[420px] border-white/10 p-0",
           "bg-white/[0.06] backdrop-blur-xl",
@@ -93,7 +97,7 @@ export default function MobileMenu() {
         <nav className="relative mt-2 flex flex-col gap-2 px-2 pb-4">
           {navlinks.map((link) => (
             <Link
-              key={link.title}
+              key={link.key}
               href={link.href}
               onClick={() => setOpen(false)}
               className={cn(
@@ -112,7 +116,7 @@ export default function MobileMenu() {
                   }}
                 />
               )}
-              <span className="relative z-10">{link.title}</span>
+              <span className="relative z-10">{t(link.key)}</span>
             </Link>
           ))}
 
@@ -121,14 +125,15 @@ export default function MobileMenu() {
             onClick={() => setOpen(false)}
             className="relative inline-flex items-center rounded-[12px] px-3 py-3 text-base text-white/90 hover:bg-white/10"
           >
-            <span className="relative z-10">Contact me</span>
+            <span className="relative z-10"> {t("nav.contact_me")}</span>
           </Link>
+           <LocaleSwitcher className="rounded-xl px-3 py-3 text-sm font-semibold text-white/90 hover:bg-white/10" />
         </nav>
 
         {/* Footer note (optional) */}
         <div className="mt-auto border-t border-white/10 px-4 py-4">
           <p className="text-xs text-white/50">
-            © {year} Mariam Raslan. All rights reserved.
+              {t("footer.copy", { year, name: "Mariam Raslan" })}
           </p>
         </div>
       </SheetContent>
