@@ -3,10 +3,11 @@ import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { Readex_Pro } from "next/font/google";
 import Footer from "@/components/layout/Footer";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import SplashCursor from "@/components/SplashCursor";
 import SplitCurtainLoader from "@/components/SplitCurtainLoader";
+import { Analytics } from "@vercel/analytics/next"
 
 const readexPro = Readex_Pro({
   weight: ["400", "500", "600", "700"],
@@ -16,29 +17,88 @@ const readexPro = Readex_Pro({
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 };
 
 export const generateMetadata = async ({
   params,
-}: Props): Promise<Metadata> => {
-  const locale = (await params).locale;
+}: {
+  params: { locale: string };
+}): Promise<Metadata> => {
+  const { locale } = params;
 
   const isRTL = locale === "ar";
 
+  const description = isRTL
+    ? "الموقع الشخصي لمريم رسلان، مطورة واجهات أمامية ومتخصصة في Next.js. استكشف الأعمال، المهارات وطرق التواصل."
+    : "Personal portfolio of Mariam Raslan, a Frontend Developer and Next.js specialist. Explore projects, skills, and ways to get in touch.";
+
   return {
     title: {
-      template: `%s | ${isRTL ? "Mariam Raslan" : "Mariam Raslan"}`,
-      default: isRTL ? "Mariam Raslan" : "Mariam Raslan",
+      template: `%s | Mariam Raslan`,
+      default: "Mariam Raslan",
     },
+    description,
+    openGraph: {
+      type: "website",
+      title: "Mariam Raslan Portfolio",
+      description,
+      url: `https://mariamraslan.vercel.app/${locale}`,
+      siteName: "Mariam Raslan Portfolio",
+      images: [
+        {
+          url: "https://mariamraslan.vercel.app/images/gradient-logo.png",
+        },
+      ],
+      locale: isRTL ? "ar_AR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Mariam Raslan Portfolio",
+      description,
+      images: [
+        "https://mariamraslan.vercel.app/images/gradient-logo.png",
+      ],
+    },
+    metadataBase: new URL("https://mariamraslan.vercel.app"),
   };
 };
 
 export default async function RootLayout({ children, params }: Props) {
-  const locale = (await params).locale;
+  const { locale } = params;
+
+  const description =
+    locale === "ar"
+      ? "الموقع الشخصي لمريم رسلان، مطورة واجهات أمامية ومتخصصة في Next.js."
+      : "Personal portfolio of Mariam Raslan, Frontend Developer and Next.js specialist.";
 
   return (
-    <html dir={locale==="en"?"ltr":"rtl"} className="scroll-smooth">
+    <html
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      className="scroll-smooth"
+    >
+      <head>
+        <meta name="description" content={description} />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta charSet="UTF-8" />
+
+        <link
+          rel="canonical"
+          href={`https://mariamraslan.vercel.app/${locale}`}
+        />
+
+        <link
+          rel="icon"
+          href="https://mariamraslan.vercel.app/images/gradient-logo.png"
+        />
+        <meta name="theme-color" content="#FFFFFF" />
+      </head>
+
       <body
         className={`${readexPro.className} ${readexPro.variable} bg-neutral-950`}
         suppressHydrationWarning={true}
@@ -51,14 +111,15 @@ export default async function RootLayout({ children, params }: Props) {
           splitDurationMs={3000}
           onlyOnce={false}
         />
-        <NextIntlClientProvider>
-          <Header />
 
+ 
+        <NextIntlClientProvider>
+          <Analytics/>
+          <Header />
           <main className="relative z-10 flex min-h-[calc(100vh-80px)] flex-col bg-neutral-950">
             <div className="pointer-events-none fixed inset-0 z-[1]">
               <SplashCursor />
             </div>
-
             {children}
           </main>
           <Footer />
