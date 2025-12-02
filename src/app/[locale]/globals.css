@@ -375,5 +375,74 @@
   width: 100%;
   height: 1px;
 }
+
+/* Base: CSS computes total scroll height:
+   100dvh + (cards-1) * (factor * viewportHeight) */
+.stack-wrapper {
+  --cards: 1;
+  --seg: calc(0.75 * 100dvh); /* default mobiles factor = 0.75 */
+  min-height: calc(100dvh + (var(--cards) - 1) * var(--seg));
+}
+
+/* ===== Exact-width special cases ===== */
+@media (min-width: 1024px) and (max-width: 1024px) {
+  .stack-wrapper { --seg: calc(0.46 * 100dvh); } /* w === 1024 */
+}
+@media (min-width: 375px) and (max-width: 375px) {
+  .stack-wrapper { --seg: calc(0.86 * 100dvh); } /* w === 375 */
+}
+@media (min-width: 412px) and (max-width: 412px) {
+  .stack-wrapper { --seg: calc(0.58 * 100dvh); } /* w === 412 */
+}
+
+/* ===== Ranges (order matters: put more specific/larger mins first) ===== */
+/* w >= 1920 */
+@media (min-width: 1920px) {
+  .stack-wrapper { --seg: calc(0.573 * 100dvh); }
+}
+
+/* 1025 <= w <= 1919 */
+@media (min-width: 1025px) and (max-width: 1919px) {
+  .stack-wrapper { --seg: calc(1.15 * 100dvh); } /* desktops above 1024 */
+}
+
+/* 912 <= w <= 1023 */
+@media (min-width: 912px) and (max-width: 1023px) {
+  .stack-wrapper { --seg: calc(0.50 * 100dvh); } /* 768–1023 bucket you used */
+}
+
+/* 820 <= w <= 911 */
+@media (min-width: 820px) and (max-width: 911px) {
+  .stack-wrapper { --seg: calc(0.49 * 100dvh); } /* 768–1023 variant */
+}
+
+/* 768 <= w <= 819 */
+@media (min-width: 768px) and (max-width: 819px) {
+  .stack-wrapper { --seg: calc(0.59 * 100dvh); }
+}
+
+/* 540 <= w <= 767 */
+@media (min-width: 540px) and (max-width: 767px) {
+  .stack-wrapper { --seg: calc(0.79 * 100dvh); }
+}
+
+/* 414 <= w <= 539 (except the exact 414 handled here) */
+@media (min-width: 414px) and (max-width: 539px) {
+  .stack-wrapper { --seg: calc(0.59 * 100dvh); }
+}
+
+/* 390 <= w <= 413 (except the exact 412 handled above) */
+@media (min-width: 390px) and (max-width: 413px) {
+  .stack-wrapper { --seg: calc(0.72 * 100dvh); }
+}
+
+/* 360 <= w <= 389 */
+@media (min-width: 360px) and (max-width: 389px) {
+  .stack-wrapper { --seg: calc(0.76 * 100dvh); }
+}
+
+/* Fallback if dvh isn't supported */
+
+
 }
 

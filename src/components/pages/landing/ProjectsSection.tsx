@@ -8,13 +8,14 @@ import SectionHeader from "@/components/SectionHeader";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cards } from "@/lib/constants";
-import { useStackHeight } from "@/lib/useStackHeight";
+import { useStableStackHeight } from "@/lib/useStackHeight";
 import { useTranslations } from "next-intl";
 
 export default function StackingCardsDemo() {
   const t = useTranslations(); // will use "projects" + "tech" namespaces below
   const total = cards.length;
-  const stackHeightPx = useStackHeight(total);
+  const stackHeightPx = useStableStackHeight(total);
+   const stackRef = useStableStackHeight(total);
 
   return (
     <section className="py-12 text-white" id="projects">
@@ -28,7 +29,7 @@ export default function StackingCardsDemo() {
         />
       </div>
 
-      <div style={{ height: stackHeightPx ? `${stackHeightPx}px` : "120vh" }}>
+      <div className="stack-wrapper">
         <StackingCards totalCards={total} scaleMultiplier={0.08}>
           {cards.map(({ bgColor, descriptionKey, image, titleKey, link, toolKeys }, index) => (
             <StackingCardItem key={index} index={index} className="z-[50] h-[540px] sm:h-[560px] md:h-[620px] lg:h-[680px]">

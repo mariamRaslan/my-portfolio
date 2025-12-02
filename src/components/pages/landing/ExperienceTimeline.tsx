@@ -135,7 +135,7 @@ export default function ExperienceTimeline() {
   const pct = Math.max(0, Math.min(100, progress * 100));
 
   return (
-    <div id="experience" className="py-5 sm:py-20">
+    <div id="experience" className="pt-30 sm:pt-40 xl:pt-44">
       <section className="relative overflow-hidden ">
         <SectionHeader
           align="center"
