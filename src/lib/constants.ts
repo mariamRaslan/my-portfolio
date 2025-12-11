@@ -14,8 +14,8 @@ export const SKILLS = [
 ];
 export const navlinks = [
   { key: "nav.home", href: "/" },
-  { key: "nav.projects", href: "#projects" },
-  { key: "nav.experience", href: "#experience" },
+  { key: "nav.projects", href: "/#projects" },
+  { key: "nav.experience", href: "/#experience" },
 ];
 export type ProjectCard = {
   bgColor: string;

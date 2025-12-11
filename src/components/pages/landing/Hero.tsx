@@ -8,7 +8,7 @@ import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 
-const CV_URL = "/files/Mariam-Raslan-CV.pdf";
+const CV_URL = "/files/MariamRaslanCV.pdf";
 
 // Title keys (rotate through these)
 const TITLE_KEYS = [
