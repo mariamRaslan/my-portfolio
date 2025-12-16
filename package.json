@@ -30,7 +30,7 @@
     "lodash.get": "^4.4.2",
     "lucide-react": "^0.544.0",
     "motion": "^12.23.24",
-    "next": "15.5.7",
+    "next": "15.5.9",
     "next-intl": "^4.3.7",
     "nextjs-toploader": "^3.9.17",
     "nodemailer": "^7.0.10",
